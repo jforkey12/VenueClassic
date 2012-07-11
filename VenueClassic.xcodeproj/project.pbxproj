@@ -14,12 +14,24 @@
 		F16ADF8415AE3AF0001E4722 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F16ADF8315AE3AF0001E4722 /* main.m */; };
 		F16ADF8815AE3AF0001E4722 /* VenueClassicAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F16ADF8715AE3AF0001E4722 /* VenueClassicAppDelegate.m */; };
 		F16ADF8B15AE3AF0001E4722 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F16ADF8915AE3AF0001E4722 /* MainStoryboard.storyboard */; };
-		F16ADF8E15AE3AF0001E4722 /* VenueClassicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F16ADF8D15AE3AF0001E4722 /* VenueClassicViewController.m */; };
 		F16ADF9615AE3AF0001E4722 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F16ADF9515AE3AF0001E4722 /* SenTestingKit.framework */; };
 		F16ADF9715AE3AF0001E4722 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F16ADF7715AE3AF0001E4722 /* UIKit.framework */; };
 		F16ADF9815AE3AF0001E4722 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F16ADF7915AE3AF0001E4722 /* Foundation.framework */; };
 		F16ADFA015AE3AF0001E4722 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F16ADF9E15AE3AF0001E4722 /* InfoPlist.strings */; };
 		F16ADFA315AE3AF0001E4722 /* VenueClassicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F16ADFA215AE3AF0001E4722 /* VenueClassicTests.m */; };
+		F16ADFAE15AE3B36001E4722 /* beginshiftdown.png in Resources */ = {isa = PBXBuildFile; fileRef = F16ADFAD15AE3B36001E4722 /* beginshiftdown.png */; };
+		F16ADFB015AE3B3E001E4722 /* beginshiftup.png in Resources */ = {isa = PBXBuildFile; fileRef = F16ADFAF15AE3B3E001E4722 /* beginshiftup.png */; };
+		F16ADFB315AE3B46001E4722 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = F16ADFB115AE3B46001E4722 /* Default.png */; };
+		F16ADFB415AE3B46001E4722 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F16ADFB215AE3B46001E4722 /* Default@2x.png */; };
+		F16ADFB615AE3B4D001E4722 /* mainscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = F16ADFB515AE3B4D001E4722 /* mainscreen.png */; };
+		F16ADFB815AE3B57001E4722 /* mainscreen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F16ADFB715AE3B57001E4722 /* mainscreen@2x.png */; };
+		F16ADFBE15AE3B65001E4722 /* resetdown.png in Resources */ = {isa = PBXBuildFile; fileRef = F16ADFB915AE3B65001E4722 /* resetdown.png */; };
+		F16ADFBF15AE3B65001E4722 /* resetup.png in Resources */ = {isa = PBXBuildFile; fileRef = F16ADFBA15AE3B65001E4722 /* resetup.png */; };
+		F16ADFC015AE3B65001E4722 /* startpauseresumedown.png in Resources */ = {isa = PBXBuildFile; fileRef = F16ADFBB15AE3B65001E4722 /* startpauseresumedown.png */; };
+		F16ADFC115AE3B65001E4722 /* startpauseresumeup.png in Resources */ = {isa = PBXBuildFile; fileRef = F16ADFBC15AE3B65001E4722 /* startpauseresumeup.png */; };
+		F16ADFC215AE3B65001E4722 /* stopnextdown.png in Resources */ = {isa = PBXBuildFile; fileRef = F16ADFBD15AE3B65001E4722 /* stopnextdown.png */; };
+		F16ADFC415AE3B6B001E4722 /* stopnextup.png in Resources */ = {isa = PBXBuildFile; fileRef = F16ADFC315AE3B6B001E4722 /* stopnextup.png */; };
+		F16ADFCE15AE3C5B001E4722 /* VenueClassicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F16ADFCD15AE3C5B001E4722 /* VenueClassicViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,21 +49,33 @@
 		F16ADF7715AE3AF0001E4722 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F16ADF7915AE3AF0001E4722 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F16ADF7B15AE3AF0001E4722 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		F16ADF7F15AE3AF0001E4722 /* VenueClassic-Info.plist */ = {isa = PBXFileReference; path = "VenueClassic-Info.plist"; sourceTree = "<group>"; };
+		F16ADF7F15AE3AF0001E4722 /* VenueClassic-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VenueClassic-Info.plist"; sourceTree = "<group>"; };
 		F16ADF8115AE3AF0001E4722 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F16ADF8315AE3AF0001E4722 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		F16ADF8515AE3AF0001E4722 /* VenueClassic-Prefix.pch */ = {isa = PBXFileReference; path = "VenueClassic-Prefix.pch"; sourceTree = "<group>"; };
-		F16ADF8615AE3AF0001E4722 /* VenueClassicAppDelegate.h */ = {isa = PBXFileReference; path = VenueClassicAppDelegate.h; sourceTree = "<group>"; };
+		F16ADF8515AE3AF0001E4722 /* VenueClassic-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VenueClassic-Prefix.pch"; sourceTree = "<group>"; };
+		F16ADF8615AE3AF0001E4722 /* VenueClassicAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VenueClassicAppDelegate.h; sourceTree = "<group>"; };
 		F16ADF8715AE3AF0001E4722 /* VenueClassicAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VenueClassicAppDelegate.m; sourceTree = "<group>"; };
 		F16ADF8A15AE3AF0001E4722 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		F16ADF8C15AE3AF0001E4722 /* VenueClassicViewController.h */ = {isa = PBXFileReference; path = VenueClassicViewController.h; sourceTree = "<group>"; };
-		F16ADF8D15AE3AF0001E4722 /* VenueClassicViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VenueClassicViewController.m; sourceTree = "<group>"; };
 		F16ADF9415AE3AF0001E4722 /* VenueClassicTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VenueClassicTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F16ADF9515AE3AF0001E4722 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		F16ADF9D15AE3AF0001E4722 /* VenueClassicTests-Info.plist */ = {isa = PBXFileReference; path = "VenueClassicTests-Info.plist"; sourceTree = "<group>"; };
+		F16ADF9D15AE3AF0001E4722 /* VenueClassicTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VenueClassicTests-Info.plist"; sourceTree = "<group>"; };
 		F16ADF9F15AE3AF0001E4722 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		F16ADFA115AE3AF0001E4722 /* VenueClassicTests.h */ = {isa = PBXFileReference; path = VenueClassicTests.h; sourceTree = "<group>"; };
+		F16ADFA115AE3AF0001E4722 /* VenueClassicTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VenueClassicTests.h; sourceTree = "<group>"; };
 		F16ADFA215AE3AF0001E4722 /* VenueClassicTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VenueClassicTests.m; sourceTree = "<group>"; };
+		F16ADFAD15AE3B36001E4722 /* beginshiftdown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beginshiftdown.png; sourceTree = "<group>"; };
+		F16ADFAF15AE3B3E001E4722 /* beginshiftup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beginshiftup.png; sourceTree = "<group>"; };
+		F16ADFB115AE3B46001E4722 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		F16ADFB215AE3B46001E4722 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		F16ADFB515AE3B4D001E4722 /* mainscreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mainscreen.png; sourceTree = "<group>"; };
+		F16ADFB715AE3B57001E4722 /* mainscreen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mainscreen@2x.png"; sourceTree = "<group>"; };
+		F16ADFB915AE3B65001E4722 /* resetdown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = resetdown.png; sourceTree = "<group>"; };
+		F16ADFBA15AE3B65001E4722 /* resetup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = resetup.png; sourceTree = "<group>"; };
+		F16ADFBB15AE3B65001E4722 /* startpauseresumedown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = startpauseresumedown.png; sourceTree = "<group>"; };
+		F16ADFBC15AE3B65001E4722 /* startpauseresumeup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = startpauseresumeup.png; sourceTree = "<group>"; };
+		F16ADFBD15AE3B65001E4722 /* stopnextdown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stopnextdown.png; sourceTree = "<group>"; };
+		F16ADFC315AE3B6B001E4722 /* stopnextup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stopnextup.png; sourceTree = "<group>"; };
+		F16ADFCC15AE3C5B001E4722 /* VenueClassicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenueClassicViewController.h; sourceTree = "<group>"; };
+		F16ADFCD15AE3C5B001E4722 /* VenueClassicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueClassicViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,11 +135,12 @@
 		F16ADF7D15AE3AF0001E4722 /* VenueClassic */ = {
 			isa = PBXGroup;
 			children = (
+				F16ADFCC15AE3C5B001E4722 /* VenueClassicViewController.h */,
+				F16ADFCD15AE3C5B001E4722 /* VenueClassicViewController.m */,
 				F16ADF8615AE3AF0001E4722 /* VenueClassicAppDelegate.h */,
 				F16ADF8715AE3AF0001E4722 /* VenueClassicAppDelegate.m */,
 				F16ADF8915AE3AF0001E4722 /* MainStoryboard.storyboard */,
-				F16ADF8C15AE3AF0001E4722 /* VenueClassicViewController.h */,
-				F16ADF8D15AE3AF0001E4722 /* VenueClassicViewController.m */,
+				F16ADFAC15AE3B1E001E4722 /* images */,
 				F16ADF7E15AE3AF0001E4722 /* Supporting Files */,
 			);
 			path = VenueClassic;
@@ -149,6 +174,26 @@
 				F16ADF9E15AE3AF0001E4722 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F16ADFAC15AE3B1E001E4722 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				F16ADFB515AE3B4D001E4722 /* mainscreen.png */,
+				F16ADFB915AE3B65001E4722 /* resetdown.png */,
+				F16ADFBA15AE3B65001E4722 /* resetup.png */,
+				F16ADFC315AE3B6B001E4722 /* stopnextup.png */,
+				F16ADFBB15AE3B65001E4722 /* startpauseresumedown.png */,
+				F16ADFBC15AE3B65001E4722 /* startpauseresumeup.png */,
+				F16ADFBD15AE3B65001E4722 /* stopnextdown.png */,
+				F16ADFB715AE3B57001E4722 /* mainscreen@2x.png */,
+				F16ADFB115AE3B46001E4722 /* Default.png */,
+				F16ADFB215AE3B46001E4722 /* Default@2x.png */,
+				F16ADFAF15AE3B3E001E4722 /* beginshiftup.png */,
+				F16ADFAD15AE3B36001E4722 /* beginshiftdown.png */,
+			);
+			name = images;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,6 +270,18 @@
 			files = (
 				F16ADF8215AE3AF0001E4722 /* InfoPlist.strings in Resources */,
 				F16ADF8B15AE3AF0001E4722 /* MainStoryboard.storyboard in Resources */,
+				F16ADFAE15AE3B36001E4722 /* beginshiftdown.png in Resources */,
+				F16ADFB015AE3B3E001E4722 /* beginshiftup.png in Resources */,
+				F16ADFB315AE3B46001E4722 /* Default.png in Resources */,
+				F16ADFB415AE3B46001E4722 /* Default@2x.png in Resources */,
+				F16ADFB615AE3B4D001E4722 /* mainscreen.png in Resources */,
+				F16ADFB815AE3B57001E4722 /* mainscreen@2x.png in Resources */,
+				F16ADFBE15AE3B65001E4722 /* resetdown.png in Resources */,
+				F16ADFBF15AE3B65001E4722 /* resetup.png in Resources */,
+				F16ADFC015AE3B65001E4722 /* startpauseresumedown.png in Resources */,
+				F16ADFC115AE3B65001E4722 /* startpauseresumeup.png in Resources */,
+				F16ADFC215AE3B65001E4722 /* stopnextdown.png in Resources */,
+				F16ADFC415AE3B6B001E4722 /* stopnextup.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,7 +318,7 @@
 			files = (
 				F16ADF8415AE3AF0001E4722 /* main.m in Sources */,
 				F16ADF8815AE3AF0001E4722 /* VenueClassicAppDelegate.m in Sources */,
-				F16ADF8E15AE3AF0001E4722 /* VenueClassicViewController.m in Sources */,
+				F16ADFCE15AE3C5B001E4722 /* VenueClassicViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
