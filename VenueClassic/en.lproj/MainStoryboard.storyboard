@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11E53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="pk3-0G-Mrr">
+    <dependencies>
+        <deployment defaultVersion="1296" identifier="iOS"/>
+        <development defaultVersion="4200" identifier="xcode"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="5p0-nQ-FYE">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="URc-Yd-xbe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController definesPresentationContext="YES" id="pk3-0G-Mrr" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="gJX-5T-4dc">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Xog-dl-FpJ" kind="relationship" relationship="rootViewController" id="csG-c6-I9D"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="-360" y="19"/>
+        </scene>
+        <!--Venue Classic View Controller-->
+        <scene sceneID="7Gr-yO-aEZ">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mBT-4r-THr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="Xog-dl-FpJ" customClass="VenueClassicViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rG7-z6-7JD">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="mainscreen.png" id="Y8U-Ah-Pip">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="lhb-Hd-Po4">
+                                <rect key="frame" x="47" y="300" width="226" height="116"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="beginshiftup.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="zbc-Tb-wiJ" kind="push" id="ARq-ZV-TZj"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="bkJ-DL-Mrl"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="133" y="19"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="fxL-FO-73j">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HoR-bl-klN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="zbc-Tb-wiJ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YAb-Vm-Met">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="0Oc-Do-sJq"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="668" y="19"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="beginshiftup.png" width="309" height="145"/>
+        <image name="mainscreen.png" width="320" height="480"/>
+    </resources>
+    <classes>
+        <class className="VenueClassicViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/VenueClassicViewController.h"/>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>
