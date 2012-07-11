@@ -1,0 +1,446 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F16ADF7815AE3AF0001E4722 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F16ADF7715AE3AF0001E4722 /* UIKit.framework */; };
+		F16ADF7A15AE3AF0001E4722 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F16ADF7915AE3AF0001E4722 /* Foundation.framework */; };
+		F16ADF7C15AE3AF0001E4722 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F16ADF7B15AE3AF0001E4722 /* CoreGraphics.framework */; };
+		F16ADF8215AE3AF0001E4722 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F16ADF8015AE3AF0001E4722 /* InfoPlist.strings */; };
+		F16ADF8415AE3AF0001E4722 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F16ADF8315AE3AF0001E4722 /* main.m */; };
+		F16ADF8815AE3AF0001E4722 /* VenueClassicAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F16ADF8715AE3AF0001E4722 /* VenueClassicAppDelegate.m */; };
+		F16ADF8B15AE3AF0001E4722 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F16ADF8915AE3AF0001E4722 /* MainStoryboard.storyboard */; };
+		F16ADF8E15AE3AF0001E4722 /* VenueClassicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F16ADF8D15AE3AF0001E4722 /* VenueClassicViewController.m */; };
+		F16ADF9615AE3AF0001E4722 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F16ADF9515AE3AF0001E4722 /* SenTestingKit.framework */; };
+		F16ADF9715AE3AF0001E4722 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F16ADF7715AE3AF0001E4722 /* UIKit.framework */; };
+		F16ADF9815AE3AF0001E4722 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F16ADF7915AE3AF0001E4722 /* Foundation.framework */; };
+		F16ADFA015AE3AF0001E4722 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F16ADF9E15AE3AF0001E4722 /* InfoPlist.strings */; };
+		F16ADFA315AE3AF0001E4722 /* VenueClassicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F16ADFA215AE3AF0001E4722 /* VenueClassicTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F16ADF9915AE3AF0001E4722 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F16ADF6A15AE3AF0001E4722 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F16ADF7215AE3AF0001E4722;
+			remoteInfo = VenueClassic;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F16ADF7315AE3AF0001E4722 /* VenueClassic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VenueClassic.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F16ADF7715AE3AF0001E4722 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		F16ADF7915AE3AF0001E4722 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F16ADF7B15AE3AF0001E4722 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		F16ADF7F15AE3AF0001E4722 /* VenueClassic-Info.plist */ = {isa = PBXFileReference; path = "VenueClassic-Info.plist"; sourceTree = "<group>"; };
+		F16ADF8115AE3AF0001E4722 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F16ADF8315AE3AF0001E4722 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F16ADF8515AE3AF0001E4722 /* VenueClassic-Prefix.pch */ = {isa = PBXFileReference; path = "VenueClassic-Prefix.pch"; sourceTree = "<group>"; };
+		F16ADF8615AE3AF0001E4722 /* VenueClassicAppDelegate.h */ = {isa = PBXFileReference; path = VenueClassicAppDelegate.h; sourceTree = "<group>"; };
+		F16ADF8715AE3AF0001E4722 /* VenueClassicAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VenueClassicAppDelegate.m; sourceTree = "<group>"; };
+		F16ADF8A15AE3AF0001E4722 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		F16ADF8C15AE3AF0001E4722 /* VenueClassicViewController.h */ = {isa = PBXFileReference; path = VenueClassicViewController.h; sourceTree = "<group>"; };
+		F16ADF8D15AE3AF0001E4722 /* VenueClassicViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VenueClassicViewController.m; sourceTree = "<group>"; };
+		F16ADF9415AE3AF0001E4722 /* VenueClassicTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VenueClassicTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F16ADF9515AE3AF0001E4722 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		F16ADF9D15AE3AF0001E4722 /* VenueClassicTests-Info.plist */ = {isa = PBXFileReference; path = "VenueClassicTests-Info.plist"; sourceTree = "<group>"; };
+		F16ADF9F15AE3AF0001E4722 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F16ADFA115AE3AF0001E4722 /* VenueClassicTests.h */ = {isa = PBXFileReference; path = VenueClassicTests.h; sourceTree = "<group>"; };
+		F16ADFA215AE3AF0001E4722 /* VenueClassicTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VenueClassicTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F16ADF7015AE3AF0001E4722 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F16ADF7815AE3AF0001E4722 /* UIKit.framework in Frameworks */,
+				F16ADF7A15AE3AF0001E4722 /* Foundation.framework in Frameworks */,
+				F16ADF7C15AE3AF0001E4722 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F16ADF9015AE3AF0001E4722 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F16ADF9615AE3AF0001E4722 /* SenTestingKit.framework in Frameworks */,
+				F16ADF9715AE3AF0001E4722 /* UIKit.framework in Frameworks */,
+				F16ADF9815AE3AF0001E4722 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F16ADF6815AE3AF0001E4722 = {
+			isa = PBXGroup;
+			children = (
+				F16ADF7D15AE3AF0001E4722 /* VenueClassic */,
+				F16ADF9B15AE3AF0001E4722 /* VenueClassicTests */,
+				F16ADF7615AE3AF0001E4722 /* Frameworks */,
+				F16ADF7415AE3AF0001E4722 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F16ADF7415AE3AF0001E4722 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F16ADF7315AE3AF0001E4722 /* VenueClassic.app */,
+				F16ADF9415AE3AF0001E4722 /* VenueClassicTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F16ADF7615AE3AF0001E4722 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F16ADF7715AE3AF0001E4722 /* UIKit.framework */,
+				F16ADF7915AE3AF0001E4722 /* Foundation.framework */,
+				F16ADF7B15AE3AF0001E4722 /* CoreGraphics.framework */,
+				F16ADF9515AE3AF0001E4722 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F16ADF7D15AE3AF0001E4722 /* VenueClassic */ = {
+			isa = PBXGroup;
+			children = (
+				F16ADF8615AE3AF0001E4722 /* VenueClassicAppDelegate.h */,
+				F16ADF8715AE3AF0001E4722 /* VenueClassicAppDelegate.m */,
+				F16ADF8915AE3AF0001E4722 /* MainStoryboard.storyboard */,
+				F16ADF8C15AE3AF0001E4722 /* VenueClassicViewController.h */,
+				F16ADF8D15AE3AF0001E4722 /* VenueClassicViewController.m */,
+				F16ADF7E15AE3AF0001E4722 /* Supporting Files */,
+			);
+			path = VenueClassic;
+			sourceTree = "<group>";
+		};
+		F16ADF7E15AE3AF0001E4722 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F16ADF7F15AE3AF0001E4722 /* VenueClassic-Info.plist */,
+				F16ADF8015AE3AF0001E4722 /* InfoPlist.strings */,
+				F16ADF8315AE3AF0001E4722 /* main.m */,
+				F16ADF8515AE3AF0001E4722 /* VenueClassic-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F16ADF9B15AE3AF0001E4722 /* VenueClassicTests */ = {
+			isa = PBXGroup;
+			children = (
+				F16ADFA115AE3AF0001E4722 /* VenueClassicTests.h */,
+				F16ADFA215AE3AF0001E4722 /* VenueClassicTests.m */,
+				F16ADF9C15AE3AF0001E4722 /* Supporting Files */,
+			);
+			path = VenueClassicTests;
+			sourceTree = "<group>";
+		};
+		F16ADF9C15AE3AF0001E4722 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F16ADF9D15AE3AF0001E4722 /* VenueClassicTests-Info.plist */,
+				F16ADF9E15AE3AF0001E4722 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F16ADF7215AE3AF0001E4722 /* VenueClassic */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F16ADFA615AE3AF0001E4722 /* Build configuration list for PBXNativeTarget "VenueClassic" */;
+			buildPhases = (
+				F16ADF6F15AE3AF0001E4722 /* Sources */,
+				F16ADF7015AE3AF0001E4722 /* Frameworks */,
+				F16ADF7115AE3AF0001E4722 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VenueClassic;
+			productName = VenueClassic;
+			productReference = F16ADF7315AE3AF0001E4722 /* VenueClassic.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F16ADF9315AE3AF0001E4722 /* VenueClassicTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F16ADFA915AE3AF0001E4722 /* Build configuration list for PBXNativeTarget "VenueClassicTests" */;
+			buildPhases = (
+				F16ADF8F15AE3AF0001E4722 /* Sources */,
+				F16ADF9015AE3AF0001E4722 /* Frameworks */,
+				F16ADF9115AE3AF0001E4722 /* Resources */,
+				F16ADF9215AE3AF0001E4722 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F16ADF9A15AE3AF0001E4722 /* PBXTargetDependency */,
+			);
+			name = VenueClassicTests;
+			productName = VenueClassicTests;
+			productReference = F16ADF9415AE3AF0001E4722 /* VenueClassicTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F16ADF6A15AE3AF0001E4722 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = VenueClassic;
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = "Worcester State College";
+			};
+			buildConfigurationList = F16ADF6D15AE3AF0001E4722 /* Build configuration list for PBXProject "VenueClassic" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = F16ADF6815AE3AF0001E4722;
+			productRefGroup = F16ADF7415AE3AF0001E4722 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F16ADF7215AE3AF0001E4722 /* VenueClassic */,
+				F16ADF9315AE3AF0001E4722 /* VenueClassicTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F16ADF7115AE3AF0001E4722 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F16ADF8215AE3AF0001E4722 /* InfoPlist.strings in Resources */,
+				F16ADF8B15AE3AF0001E4722 /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F16ADF9115AE3AF0001E4722 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F16ADFA015AE3AF0001E4722 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		F16ADF9215AE3AF0001E4722 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F16ADF6F15AE3AF0001E4722 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F16ADF8415AE3AF0001E4722 /* main.m in Sources */,
+				F16ADF8815AE3AF0001E4722 /* VenueClassicAppDelegate.m in Sources */,
+				F16ADF8E15AE3AF0001E4722 /* VenueClassicViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F16ADF8F15AE3AF0001E4722 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F16ADFA315AE3AF0001E4722 /* VenueClassicTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F16ADF9A15AE3AF0001E4722 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F16ADF7215AE3AF0001E4722 /* VenueClassic */;
+			targetProxy = F16ADF9915AE3AF0001E4722 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F16ADF8015AE3AF0001E4722 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F16ADF8115AE3AF0001E4722 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		F16ADF8915AE3AF0001E4722 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F16ADF8A15AE3AF0001E4722 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+		F16ADF9E15AE3AF0001E4722 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F16ADF9F15AE3AF0001E4722 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F16ADFA415AE3AF0001E4722 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		F16ADFA515AE3AF0001E4722 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F16ADFA715AE3AF0001E4722 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VenueClassic/VenueClassic-Prefix.pch";
+				INFOPLIST_FILE = "VenueClassic/VenueClassic-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		F16ADFA815AE3AF0001E4722 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VenueClassic/VenueClassic-Prefix.pch";
+				INFOPLIST_FILE = "VenueClassic/VenueClassic-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		F16ADFAA15AE3AF0001E4722 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/VenueClassic.app/VenueClassic";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VenueClassic/VenueClassic-Prefix.pch";
+				INFOPLIST_FILE = "VenueClassicTests/VenueClassicTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		F16ADFAB15AE3AF0001E4722 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/VenueClassic.app/VenueClassic";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VenueClassic/VenueClassic-Prefix.pch";
+				INFOPLIST_FILE = "VenueClassicTests/VenueClassicTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F16ADF6D15AE3AF0001E4722 /* Build configuration list for PBXProject "VenueClassic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F16ADFA415AE3AF0001E4722 /* Debug */,
+				F16ADFA515AE3AF0001E4722 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F16ADFA615AE3AF0001E4722 /* Build configuration list for PBXNativeTarget "VenueClassic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F16ADFA715AE3AF0001E4722 /* Debug */,
+				F16ADFA815AE3AF0001E4722 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F16ADFA915AE3AF0001E4722 /* Build configuration list for PBXNativeTarget "VenueClassicTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F16ADFAA15AE3AF0001E4722 /* Debug */,
+				F16ADFAB15AE3AF0001E4722 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F16ADF6A15AE3AF0001E4722 /* Project object */;
+}
