@@ -1,5 +1,5 @@
 //
-//  VenueClassicViewController.h
+//  InformationViewController.h
 //  VenueClassic
 //
 //  Created by James Forkey on 7/12/12.
@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface VenueClassicViewController : UIViewController
+@interface InformationViewController : UIViewController {
+
+IBOutlet UILabel *_label;
+
+NSTimer *timer;
+    
+}
+
+-(void)updateTimer;
 
 @end

@@ -1,18 +1,26 @@
 //
-//  VenueClassicViewController.m
+//  InformationViewController.m
 //  VenueClassic
 //
 //  Created by James Forkey on 7/12/12.
 //  Copyright (c) 2012 Worcester State College. All rights reserved.
 //
 
-#import "VenueClassicViewController.h"
+#import "InformationViewController.h"
 
-@interface VenueClassicViewController ()
+@interface InformationViewController ()
 
 @end
 
-@implementation VenueClassicViewController
+@implementation InformationViewController
+
+- (void) updateTimer 
+{
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc ] init];
+    _label.text = [formatter stringFromDate:[NSDate date]];
+    
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,7 +34,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+	timer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(updateTimer) userInfo:nil repeats:YES];
+             // Do any additional setup after loading the view.
 }
 
 - (void)viewDidUnload
