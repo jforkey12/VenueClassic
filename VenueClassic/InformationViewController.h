@@ -10,12 +10,23 @@
 
 @interface InformationViewController : UIViewController {
 
-IBOutlet UILabel *_label;
-
-NSTimer *timer;
+    IBOutlet UILabel *_label;
+    IBOutlet UITextField *_name;
+    IBOutlet UITextField *_email;
+    IBOutlet UITextField *_shift_number;
+    IBOutlet UISegmentedControl *_user_type;
     
+    NSTimer *timer;
 }
 
+@property (strong, nonatomic) UILabel *_label;
+@property (strong, nonatomic) UITextField *_name;
+@property (strong, nonatomic) UITextField *_email;
+@property (strong, nonatomic) UITextField *_shift_number;
+@property (strong, nonatomic) UISegmentedControl *_user_type;
+
+-(BOOL)hideKeyboard:(id)sender;
+-(BOOL)backgroundTouched:(id)sender;
 -(void)updateTimer;
 
 @end

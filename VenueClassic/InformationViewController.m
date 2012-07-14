@@ -14,12 +14,29 @@
 
 @implementation InformationViewController
 
+@synthesize _label;
+@synthesize _name;
+@synthesize _email;
+@synthesize _shift_number;
+@synthesize _user_type;
+
+-(BOOL) hideKeyboard:(UITextField *) textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
+
+-(BOOL) backgroundTouched:(UITextField *) textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
+
 - (void) updateTimer 
 {
     
     NSDateFormatter *formatter = [[NSDateFormatter alloc ] init];
     _label.text = [formatter stringFromDate:[NSDate date]];
-    
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -35,7 +52,6 @@
 {
     [super viewDidLoad];
 	timer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(updateTimer) userInfo:nil repeats:YES];
-             // Do any additional setup after loading the view.
 }
 
 - (void)viewDidUnload
