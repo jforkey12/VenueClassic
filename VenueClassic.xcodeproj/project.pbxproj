@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F111E17C15B586CF00237E41 /* ios_development-1.cer in Resources */ = {isa = PBXBuildFile; fileRef = F111E17B15B586CF00237E41 /* ios_development-1.cer */; };
 		F16ADF7815AE3AF0001E4722 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F16ADF7715AE3AF0001E4722 /* UIKit.framework */; };
 		F16ADF7A15AE3AF0001E4722 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F16ADF7915AE3AF0001E4722 /* Foundation.framework */; };
 		F16ADF7C15AE3AF0001E4722 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F16ADF7B15AE3AF0001E4722 /* CoreGraphics.framework */; };
@@ -23,9 +24,11 @@
 		F16ADFB415AE3B46001E4722 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F16ADFB215AE3B46001E4722 /* Default@2x.png */; };
 		F16ADFB615AE3B4D001E4722 /* mainscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = F16ADFB515AE3B4D001E4722 /* mainscreen.png */; };
 		F16ADFB815AE3B57001E4722 /* mainscreen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F16ADFB715AE3B57001E4722 /* mainscreen@2x.png */; };
+		F1889A5A15B43F76007BD512 /* DisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1889A5915B43F76007BD512 /* DisplayViewController.m */; };
+		F1889A5E15B447D9007BD512 /* endshiftup.png in Resources */ = {isa = PBXBuildFile; fileRef = F1889A5D15B447D9007BD512 /* endshiftup.png */; };
+		F1889A6015B454B8007BD512 /* alarm.png in Resources */ = {isa = PBXBuildFile; fileRef = F1889A5F15B454B8007BD512 /* alarm.png */; };
 		F193EA2D15AEE5A8001CA48E /* beginshiftdown.png in Resources */ = {isa = PBXBuildFile; fileRef = F193EA2015AEE5A8001CA48E /* beginshiftdown.png */; };
 		F193EA2E15AEE5A8001CA48E /* beginshiftup.png in Resources */ = {isa = PBXBuildFile; fileRef = F193EA2115AEE5A8001CA48E /* beginshiftup.png */; };
-		F193EA2F15AEE5A8001CA48E /* endshift.png in Resources */ = {isa = PBXBuildFile; fileRef = F193EA2215AEE5A8001CA48E /* endshift.png */; };
 		F193EA3015AEE5A8001CA48E /* endshiftdown.png in Resources */ = {isa = PBXBuildFile; fileRef = F193EA2315AEE5A8001CA48E /* endshiftdown.png */; };
 		F193EA3115AEE5A8001CA48E /* nextdown.png in Resources */ = {isa = PBXBuildFile; fileRef = F193EA2415AEE5A8001CA48E /* nextdown.png */; };
 		F193EA3215AEE5A8001CA48E /* nextup.png in Resources */ = {isa = PBXBuildFile; fileRef = F193EA2515AEE5A8001CA48E /* nextup.png */; };
@@ -51,6 +54,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F111E17B15B586CF00237E41 /* ios_development-1.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ios_development-1.cer"; sourceTree = "<group>"; };
 		F16ADF7315AE3AF0001E4722 /* VenueClassic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VenueClassic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F16ADF7715AE3AF0001E4722 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F16ADF7915AE3AF0001E4722 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -72,9 +76,12 @@
 		F16ADFB215AE3B46001E4722 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		F16ADFB515AE3B4D001E4722 /* mainscreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mainscreen.png; sourceTree = "<group>"; };
 		F16ADFB715AE3B57001E4722 /* mainscreen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mainscreen@2x.png"; sourceTree = "<group>"; };
+		F1889A5815B43F76007BD512 /* DisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisplayViewController.h; sourceTree = "<group>"; };
+		F1889A5915B43F76007BD512 /* DisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisplayViewController.m; sourceTree = "<group>"; };
+		F1889A5D15B447D9007BD512 /* endshiftup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = endshiftup.png; sourceTree = "<group>"; };
+		F1889A5F15B454B8007BD512 /* alarm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alarm.png; sourceTree = "<group>"; };
 		F193EA2015AEE5A8001CA48E /* beginshiftdown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = beginshiftdown.png; path = newimages/beginshiftdown.png; sourceTree = "<group>"; };
 		F193EA2115AEE5A8001CA48E /* beginshiftup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = beginshiftup.png; path = newimages/beginshiftup.png; sourceTree = "<group>"; };
-		F193EA2215AEE5A8001CA48E /* endshift.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = endshift.png; path = newimages/endshift.png; sourceTree = "<group>"; };
 		F193EA2315AEE5A8001CA48E /* endshiftdown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = endshiftdown.png; path = newimages/endshiftdown.png; sourceTree = "<group>"; };
 		F193EA2415AEE5A8001CA48E /* nextdown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nextdown.png; path = newimages/nextdown.png; sourceTree = "<group>"; };
 		F193EA2515AEE5A8001CA48E /* nextup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nextup.png; path = newimages/nextup.png; sourceTree = "<group>"; };
@@ -154,6 +161,8 @@
 				F193EA4115AF48B4001CA48E /* VenueClassicViewController.m */,
 				F193EA4715AF4987001CA48E /* InformationViewController.h */,
 				F193EA4815AF4987001CA48E /* InformationViewController.m */,
+				F1889A5815B43F76007BD512 /* DisplayViewController.h */,
+				F1889A5915B43F76007BD512 /* DisplayViewController.m */,
 				F16ADF8915AE3AF0001E4722 /* MainStoryboard.storyboard */,
 				F16ADFAC15AE3B1E001E4722 /* images */,
 				F16ADF7E15AE3AF0001E4722 /* Supporting Files */,
@@ -164,6 +173,7 @@
 		F16ADF7E15AE3AF0001E4722 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F111E17B15B586CF00237E41 /* ios_development-1.cer */,
 				F16ADF7F15AE3AF0001E4722 /* VenueClassic-Info.plist */,
 				F16ADF8015AE3AF0001E4722 /* InfoPlist.strings */,
 				F16ADF8315AE3AF0001E4722 /* main.m */,
@@ -194,9 +204,10 @@
 		F16ADFAC15AE3B1E001E4722 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				F1889A5F15B454B8007BD512 /* alarm.png */,
 				F193EA2015AEE5A8001CA48E /* beginshiftdown.png */,
+				F1889A5D15B447D9007BD512 /* endshiftup.png */,
 				F193EA2115AEE5A8001CA48E /* beginshiftup.png */,
-				F193EA2215AEE5A8001CA48E /* endshift.png */,
 				F193EA2315AEE5A8001CA48E /* endshiftdown.png */,
 				F193EA2415AEE5A8001CA48E /* nextdown.png */,
 				F193EA2515AEE5A8001CA48E /* nextup.png */,
@@ -296,7 +307,6 @@
 				F16ADFB815AE3B57001E4722 /* mainscreen@2x.png in Resources */,
 				F193EA2D15AEE5A8001CA48E /* beginshiftdown.png in Resources */,
 				F193EA2E15AEE5A8001CA48E /* beginshiftup.png in Resources */,
-				F193EA2F15AEE5A8001CA48E /* endshift.png in Resources */,
 				F193EA3015AEE5A8001CA48E /* endshiftdown.png in Resources */,
 				F193EA3115AEE5A8001CA48E /* nextdown.png in Resources */,
 				F193EA3215AEE5A8001CA48E /* nextup.png in Resources */,
@@ -307,6 +317,8 @@
 				F193EA3715AEE5A8001CA48E /* startpauseresumeup.png in Resources */,
 				F193EA3815AEE5A8001CA48E /* stopnextdown.png in Resources */,
 				F193EA3915AEE5A8001CA48E /* stopnextup.png in Resources */,
+				F1889A5E15B447D9007BD512 /* endshiftup.png in Resources */,
+				F1889A6015B454B8007BD512 /* alarm.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,6 +327,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F16ADFA015AE3AF0001E4722 /* InfoPlist.strings in Resources */,
+				F111E17C15B586CF00237E41 /* ios_development-1.cer in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,6 +358,7 @@
 				F16ADF8815AE3AF0001E4722 /* VenueClassicAppDelegate.m in Sources */,
 				F193EA4215AF48B4001CA48E /* VenueClassicViewController.m in Sources */,
 				F193EA4915AF4987001CA48E /* InformationViewController.m in Sources */,
+				F1889A5A15B43F76007BD512 /* DisplayViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
