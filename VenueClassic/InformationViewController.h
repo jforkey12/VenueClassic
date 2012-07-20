@@ -34,11 +34,10 @@
 @property (nonatomic, retain) NSDateFormatter *_dateFormatter2;
 @property (nonatomic, retain) UIAlertView *alertsuccess;
 
--(IBAction)hideKeyboard:(id)textField;
 -(IBAction)textFieldFinished:(id) textField;
--(BOOL)backgroundTouched:(id)sender;
+-(IBAction)backgroundTouched:(id)textField;
 -(void)updateTimer;
 
--(IBAction)CheckFieldsAlert;
+-(IBAction)CheckFieldsAlert:(id)sender;
 
 @end

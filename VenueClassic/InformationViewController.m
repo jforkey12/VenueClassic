@@ -25,19 +25,6 @@
 @synthesize _dateFormatter2;
 @synthesize alertsuccess;
 
--(IBAction)hideKeyboard:(id) textField
-{
-    if ( textField == _name ) {
-        [ _name resignFirstResponder ];
-    }
-    else if (textField == _email ) {
-        [ _email resignFirstResponder ];
-    }
-    else if (textField == _shift_number ) {
-        [ _shift_number resignFirstResponder ];
-    }    
-}
-
 - (IBAction)textFieldFinished:(id) textField
 {
     if ( textField == _name ) {
@@ -51,7 +38,7 @@
     }
 }
 
--(BOOL) backgroundTouched:(UITextField *) textField
+-(IBAction)backgroundTouched:(id)textField
 {
     if ( textField == _name ) {
         [ _name resignFirstResponder ];
@@ -61,9 +48,7 @@
     }
     else if (textField == _shift_number ) {
         [ _shift_number resignFirstResponder ];
-    }
-    
-    return YES;
+    }    
 }
 
 - (void) updateTimer 
@@ -160,7 +145,7 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-- (IBAction)CheckFieldsAlert {
+- (IBAction)CheckFieldsAlert:(id) sender {
     NSString *error_string = @"";
     int error_count = 0;
     
@@ -179,7 +164,7 @@
         error_count++;
     }
     
-    if ( error_count == 2 ) {
+    if ( error_count > 1 ) {
         error_string = @"Please fill in the required fields before continuing.";
     }
     
@@ -189,11 +174,8 @@
         [checkFieldsFail show];
     }
     else {
-        
+        [self performSegueWithIdentifier:@"ValidationSucceeded" sender:self];
     }
-    
-
 }
-
 
 @end
