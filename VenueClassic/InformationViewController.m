@@ -14,27 +14,41 @@
 
 @implementation InformationViewController
 
-
 @synthesize timerLabel1;
 @synthesize dateLabel1;
 @synthesize _name;
 @synthesize _email;
 @synthesize _shift_number;
 @synthesize _user_type;
+@synthesize _casino;
 @synthesize _dateFormatter;
 @synthesize _dateFormatter2;
 @synthesize alertsuccess;
 
--(BOOL) hideKeyboard:(UITextField *) textField
+- (IBAction)textFieldFinished:(id) textField
 {
-    [textField resignFirstResponder];
-    return YES;
+    if ( textField == _name ) {
+        [ _name resignFirstResponder ];
+    }
+    else if (textField == _email ) {
+        [ _email resignFirstResponder ];
+    }
+    else if (textField == _shift_number ) {
+        [ _shift_number resignFirstResponder ];
+    }
 }
 
--(BOOL) backgroundTouched:(UITextField *) textField
+-(IBAction)backgroundTouched:(id)textField
 {
-    [textField resignFirstResponder];
-    return YES;
+    if ( textField == _name ) {
+        [ _name resignFirstResponder ];
+    }
+    else if (textField == _email ) {
+        [ _email resignFirstResponder ];
+    }
+    else if (textField == _shift_number ) {
+        [ _shift_number resignFirstResponder ];
+    }    
 }
 
 - (void) updateTimer 
@@ -59,6 +73,18 @@
     [timerLabel1 setBackgroundColor:[UIColor clearColor]];
     [timerLabel1 setFont:[UIFont boldSystemFontOfSize:14]];
     [timerLabel1 setTextColor:[UIColor whiteColor]];
+    
+    [self._name setReturnKeyType:UIReturnKeyDone];
+    [self._name addTarget:self action:@selector(textFieldFinished:) forControlEvents:UIControlEventEditingDidEndOnExit];
+    
+    [self._email setReturnKeyType:UIReturnKeyDone];
+    [self._email addTarget:self action:@selector(textFieldFinished:) forControlEvents:UIControlEventEditingDidEndOnExit];
+    
+    [self._shift_number setReturnKeyType:UIReturnKeyDone];
+    [self._shift_number addTarget:self action:@selector(textFieldFinished:) forControlEvents:UIControlEventEditingDidEndOnExit];
+    
+    //UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard:)];
+    //[self.view addGestureRecognizer:gestureRecognizer];
     
     NSDate *today = [[NSDate alloc] init];
     _dateFormatter = [[NSDateFormatter alloc] init];
@@ -118,11 +144,38 @@
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
-- (IBAction)CheckFieldsAlert {
-    UIAlertView *checkFieldsFail = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Empty Field" delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil, nil];   
-    [checkFieldsFail show];
 
+- (IBAction)CheckFieldsAlert:(id) sender {
+    NSString *error_string = @"";
+    int error_count = 0;
+    
+    if ( [_name.text isEqualToString:@""] ) {
+        error_string = @"Please provide your name.";
+        error_count++;
+    }
+    
+    if( [_email.text isEqualToString:@"" ] ) {
+        error_string = @"Please provide your email address.";
+        error_count++;
+    }
+    
+    if( [_shift_number.text isEqualToString:@"" ] ) {
+        error_string = @"Please provide a shift number.";
+        error_count++;
+    }
+    
+    if ( error_count > 1 ) {
+        error_string = @"Please fill in the required fields before continuing.";
+    }
+    
+    UIAlertView *checkFieldsFail = [[UIAlertView alloc] initWithTitle:@"Error" message:error_string delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil, nil];   
+    
+    if (error_count > 0) {
+        [checkFieldsFail show];
+    }
+    else {
+        [self performSegueWithIdentifier:@"ValidationSucceeded" sender:self];
+    }
 }
-
 
 @end
