@@ -1,34 +1,44 @@
 //
-//  DisplayViewController.h
-//  VenueClassic
+//  NSTimerViewController.h
+//  NSTimer
 //
-//  Created by James Forkey on 7/16/12.
-//  Copyright (c) 2012 Worcester State College. All rights reserved.
+//  Created by Lenzo on 29.10.11.
+//  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
 @interface DisplayViewController : UIViewController {
-
-    IBOutlet UILabel *timerLabel2;
-    IBOutlet UILabel *clock;
-    IBOutlet UILabel *dateLabel2;
-
-    NSTimer *timer;
-    NSDateFormatter *_dateFormatter;
-    NSDateFormatter *_dateFormatter2;
     
+    UILabel *mainLabel;
+    UILabel *secondLabel;
+    UILabel *totalMassages;
+    UILabel *totalMinutes;
+    UILabel *timerLabel1;
+    UILabel *dateLabel1;
+    
+    NSTimer *dateTimer;
+    NSTimer *mainTimer;
+    NSTimer *secondTimer;
+    
+    NSDate *startDateMain;
+    NSDate *startDate;
+    NSString *timeString2;
+    NSString *minutesString;
     
 }
 
-@property (nonatomic, retain) UILabel *timerLabel2;
-@property (nonatomic, retain) UILabel *clock;
+@property(nonatomic, retain)IBOutlet UILabel *secondLabel;
+@property(nonatomic, retain)IBOutlet UILabel *totalMassages;
+@property(nonatomic, retain)IBOutlet UILabel *totalMinutes;
+@property(nonatomic, retain)IBOutlet NSString *timeString2;
+@property(nonatomic, retain)IBOutlet NSString *minutesString;
+@property(nonatomic, retain)IBOutlet UILabel *timerLabel1;
+@property(nonatomic, retain)IBOutlet UILabel *dateLabel1;
 @property (nonatomic, retain) NSDateFormatter *_dateFormatter;
-@property (nonatomic, retain) UILabel *dateLabel2;
 @property (nonatomic, retain) NSDateFormatter *_dateFormatter2;
 
--(BOOL)hideKeyboard:(id)sender;
--(BOOL)backgroundTouched:(id)sender;
--(void)updateTimer;
+-(IBAction)startSecond:(id)sender;
+-(IBAction)stopNext:(id)sender;
 
 @end
