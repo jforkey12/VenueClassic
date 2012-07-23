@@ -25,7 +25,6 @@
     NSDate *startDate;
     NSString *timeString2;
     NSString *minutesString;
-    
 }
 
 @property(nonatomic, retain)IBOutlet UILabel *secondLabel;
@@ -35,10 +34,12 @@
 @property(nonatomic, retain)IBOutlet NSString *minutesString;
 @property(nonatomic, retain)IBOutlet UILabel *timerLabel1;
 @property(nonatomic, retain)IBOutlet UILabel *dateLabel1;
-@property (nonatomic, retain) NSDateFormatter *_dateFormatter;
-@property (nonatomic, retain) NSDateFormatter *_dateFormatter2;
+@property(nonatomic, retain) NSDateFormatter *_dateFormatter;
+@property(nonatomic, retain) NSDateFormatter *_dateFormatter2;
 
 -(IBAction)startSecond:(id)sender;
 -(IBAction)stopNext:(id)sender;
+
+-(IBAction)LockIt;  
 
 @end

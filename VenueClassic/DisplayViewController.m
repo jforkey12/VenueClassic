@@ -120,7 +120,6 @@ NSDate *timerDate3;
                                            selector:@selector(pollTime2)
                                            userInfo:nil
                                             repeats:YES];
-    
 }
 
 
@@ -150,23 +149,29 @@ NSDate *timerDate3;
 
 /*
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad
-{
+-(void)viewDidLoad
+{ 
     [super viewDidLoad];
 }
-*/
+ */
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+-(IBAction)LockIt {    
+    [self performSegueWithIdentifier:@"LockSuccessful" sender:self];
+}
+
+-(IBAction)finishMassage:(id)sender {
+    [self performSegueWithIdentifier:@"massageFinished" sender:self];
 }
 
 @end

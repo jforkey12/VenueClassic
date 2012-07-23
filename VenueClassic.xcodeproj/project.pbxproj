@@ -51,6 +51,11 @@
 		F1C41D6815B792F800B3CB88 /* DisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1C41D6715B792F800B3CB88 /* DisplayViewController.m */; };
 		F1C41D6A15B793AA00B3CB88 /* DisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1C41D6715B792F800B3CB88 /* DisplayViewController.m */; };
 		F1C41D6C15B8D1B100B3CB88 /* alarmon.png in Resources */ = {isa = PBXBuildFile; fileRef = F1C41D6B15B8D1B100B3CB88 /* alarmon.png */; };
+		FAD84AB315BC8516007E4A6D /* lock_image.png in Resources */ = {isa = PBXBuildFile; fileRef = FAD84AB215BC8516007E4A6D /* lock_image.png */; };
+		FAD84AB615BC8F36007E4A6D /* LockScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD84AB515BC8F36007E4A6D /* LockScreenViewController.m */; };
+		FAD84AB815BC976D007E4A6D /* Nothing.png in Resources */ = {isa = PBXBuildFile; fileRef = FAD84AB715BC976D007E4A6D /* Nothing.png */; };
+		FAD84ABB15BCA27B007E4A6D /* SlideToStop.png in Resources */ = {isa = PBXBuildFile; fileRef = FAD84AB915BCA27B007E4A6D /* SlideToStop.png */; };
+		FAD84ABC15BCA27B007E4A6D /* SlideToStopBar.png in Resources */ = {isa = PBXBuildFile; fileRef = FAD84ABA15BCA27B007E4A6D /* SlideToStopBar.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +120,12 @@
 		F1C41D6615B792F800B3CB88 /* DisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisplayViewController.h; sourceTree = "<group>"; };
 		F1C41D6715B792F800B3CB88 /* DisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisplayViewController.m; sourceTree = "<group>"; };
 		F1C41D6B15B8D1B100B3CB88 /* alarmon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alarmon.png; sourceTree = "<group>"; };
+		FAD84AB215BC8516007E4A6D /* lock_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lock_image.png; path = ../lock_image.png; sourceTree = "<group>"; };
+		FAD84AB415BC8F36007E4A6D /* LockScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LockScreenViewController.h; path = ../LockScreenViewController.h; sourceTree = "<group>"; };
+		FAD84AB515BC8F36007E4A6D /* LockScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LockScreenViewController.m; path = ../LockScreenViewController.m; sourceTree = "<group>"; };
+		FAD84AB715BC976D007E4A6D /* Nothing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Nothing.png; path = ../../../Downloads/SlideToUnlock/Nothing.png; sourceTree = "<group>"; };
+		FAD84AB915BCA27B007E4A6D /* SlideToStop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SlideToStop.png; path = ../../../Downloads/SlideToUnlock/SlideToStop.png; sourceTree = "<group>"; };
+		FAD84ABA15BCA27B007E4A6D /* SlideToStopBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SlideToStopBar.png; path = ../../../Downloads/SlideToUnlock/SlideToStopBar.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +185,8 @@
 		F16ADF7D15AE3AF0001E4722 /* VenueClassic */ = {
 			isa = PBXGroup;
 			children = (
+				FAD84AB415BC8F36007E4A6D /* LockScreenViewController.h */,
+				FAD84AB515BC8F36007E4A6D /* LockScreenViewController.m */,
 				F16ADF8615AE3AF0001E4722 /* VenueClassicAppDelegate.h */,
 				F16ADF8715AE3AF0001E4722 /* VenueClassicAppDelegate.m */,
 				F193EA4015AF48B4001CA48E /* VenueClassicViewController.h */,
@@ -223,6 +236,10 @@
 		F16ADFAC15AE3B1E001E4722 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				FAD84AB715BC976D007E4A6D /* Nothing.png */,
+				FAD84AB215BC8516007E4A6D /* lock_image.png */,
+				FAD84AB915BCA27B007E4A6D /* SlideToStop.png */,
+				FAD84ABA15BCA27B007E4A6D /* SlideToStopBar.png */,
 				F175116F15BABF5800B4A37F /* Icon-72.png */,
 				F175117015BABF5800B4A37F /* Icon-72@2x.png */,
 				F175117115BABF5800B4A37F /* Icon-Small-50.png */,
@@ -356,6 +373,10 @@
 				F175117C15BABF5800B4A37F /* Icon-Small@2x.png in Resources */,
 				F175117D15BABF5800B4A37F /* Icon.png in Resources */,
 				F175117E15BABF5800B4A37F /* Icon@2x.png in Resources */,
+				FAD84AB315BC8516007E4A6D /* lock_image.png in Resources */,
+				FAD84AB815BC976D007E4A6D /* Nothing.png in Resources */,
+				FAD84ABB15BCA27B007E4A6D /* SlideToStop.png in Resources */,
+				FAD84ABC15BCA27B007E4A6D /* SlideToStopBar.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,6 +417,7 @@
 				F16ADF8815AE3AF0001E4722 /* VenueClassicAppDelegate.m in Sources */,
 				F193EA4215AF48B4001CA48E /* VenueClassicViewController.m in Sources */,
 				F193EA4915AF4987001CA48E /* InformationViewController.m in Sources */,
+				FAD84AB615BC8F36007E4A6D /* LockScreenViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
