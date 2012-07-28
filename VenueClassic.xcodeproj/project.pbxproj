@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F111E17C15B586CF00237E41 /* ios_development-1.cer in Resources */ = {isa = PBXBuildFile; fileRef = F111E17B15B586CF00237E41 /* ios_development-1.cer */; };
+		F1441C4815C438280003DDBE /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1441C4715C438280003DDBE /* MessageUI.framework */; };
 		F16ADF7815AE3AF0001E4722 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F16ADF7715AE3AF0001E4722 /* UIKit.framework */; };
 		F16ADF7A15AE3AF0001E4722 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F16ADF7915AE3AF0001E4722 /* Foundation.framework */; };
 		F16ADF7C15AE3AF0001E4722 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F16ADF7B15AE3AF0001E4722 /* CoreGraphics.framework */; };
@@ -33,7 +34,6 @@
 		F175117D15BABF5800B4A37F /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F175117515BABF5800B4A37F /* Icon.png */; };
 		F175117E15BABF5800B4A37F /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F175117615BABF5800B4A37F /* Icon@2x.png */; };
 		F1889A5E15B447D9007BD512 /* endshiftup.png in Resources */ = {isa = PBXBuildFile; fileRef = F1889A5D15B447D9007BD512 /* endshiftup.png */; };
-		F1889A6015B454B8007BD512 /* alarm.png in Resources */ = {isa = PBXBuildFile; fileRef = F1889A5F15B454B8007BD512 /* alarm.png */; };
 		F193EA2D15AEE5A8001CA48E /* beginshiftdown.png in Resources */ = {isa = PBXBuildFile; fileRef = F193EA2015AEE5A8001CA48E /* beginshiftdown.png */; };
 		F193EA2E15AEE5A8001CA48E /* beginshiftup.png in Resources */ = {isa = PBXBuildFile; fileRef = F193EA2115AEE5A8001CA48E /* beginshiftup.png */; };
 		F193EA3015AEE5A8001CA48E /* endshiftdown.png in Resources */ = {isa = PBXBuildFile; fileRef = F193EA2315AEE5A8001CA48E /* endshiftdown.png */; };
@@ -48,14 +48,19 @@
 		F193EA3915AEE5A8001CA48E /* stopnextup.png in Resources */ = {isa = PBXBuildFile; fileRef = F193EA2C15AEE5A8001CA48E /* stopnextup.png */; };
 		F193EA4215AF48B4001CA48E /* VenueClassicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F193EA4115AF48B4001CA48E /* VenueClassicViewController.m */; };
 		F193EA4915AF4987001CA48E /* InformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F193EA4815AF4987001CA48E /* InformationViewController.m */; };
+		F1A1F34D15C41DE300FC44C8 /* doneup.png in Resources */ = {isa = PBXBuildFile; fileRef = F1A1F34C15C41DE300FC44C8 /* doneup.png */; };
+		F1A1F35015C41DEB00FC44C8 /* donedown.png in Resources */ = {isa = PBXBuildFile; fileRef = F1A1F34F15C41DEB00FC44C8 /* donedown.png */; };
+		F1A1F36615C41FB800FC44C8 /* KeyboardExtensionAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F1A1F36515C41FB800FC44C8 /* KeyboardExtensionAppDelegate.m */; };
 		F1C41D6815B792F800B3CB88 /* DisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1C41D6715B792F800B3CB88 /* DisplayViewController.m */; };
 		F1C41D6A15B793AA00B3CB88 /* DisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1C41D6715B792F800B3CB88 /* DisplayViewController.m */; };
 		F1C41D6C15B8D1B100B3CB88 /* alarmon.png in Resources */ = {isa = PBXBuildFile; fileRef = F1C41D6B15B8D1B100B3CB88 /* alarmon.png */; };
+		F1CF677D15C047B00029E100 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1CF677C15C047AF0029E100 /* AudioToolbox.framework */; };
+		F1CF678215C054900029E100 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1CF678115C054900029E100 /* AVFoundation.framework */; };
+		F1CF678415C0670D0029E100 /* MSCTY.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F1CF678315C0670D0029E100 /* MSCTY.mp3 */; };
 		FAD84AB615BC8F36007E4A6D /* LockScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD84AB515BC8F36007E4A6D /* LockScreenViewController.m */; };
 		FAD84AD115BDFAF0007E4A6D /* lock_image.png in Resources */ = {isa = PBXBuildFile; fileRef = FAD84ACE15BDFAF0007E4A6D /* lock_image.png */; };
 		FAD84AD215BDFAF0007E4A6D /* SlideToStop.png in Resources */ = {isa = PBXBuildFile; fileRef = FAD84ACF15BDFAF0007E4A6D /* SlideToStop.png */; };
 		FAD84AD315BDFAF0007E4A6D /* SlideToStopBar.png in Resources */ = {isa = PBXBuildFile; fileRef = FAD84AD015BDFAF0007E4A6D /* SlideToStopBar.png */; };
-		FAD84AD515BDFB0D007E4A6D /* Nothing.png in Resources */ = {isa = PBXBuildFile; fileRef = FAD84AD415BDFB0D007E4A6D /* Nothing.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +75,7 @@
 
 /* Begin PBXFileReference section */
 		F111E17B15B586CF00237E41 /* ios_development-1.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ios_development-1.cer"; sourceTree = "<group>"; };
+		F1441C4715C438280003DDBE /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		F16ADF7315AE3AF0001E4722 /* VenueClassic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VenueClassic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F16ADF7715AE3AF0001E4722 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F16ADF7915AE3AF0001E4722 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -100,7 +106,6 @@
 		F175117515BABF5800B4A37F /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		F175117615BABF5800B4A37F /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		F1889A5D15B447D9007BD512 /* endshiftup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = endshiftup.png; sourceTree = "<group>"; };
-		F1889A5F15B454B8007BD512 /* alarm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alarm.png; sourceTree = "<group>"; };
 		F193EA2015AEE5A8001CA48E /* beginshiftdown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = beginshiftdown.png; path = newimages/beginshiftdown.png; sourceTree = "<group>"; };
 		F193EA2115AEE5A8001CA48E /* beginshiftup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = beginshiftup.png; path = newimages/beginshiftup.png; sourceTree = "<group>"; };
 		F193EA2315AEE5A8001CA48E /* endshiftdown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = endshiftdown.png; path = newimages/endshiftdown.png; sourceTree = "<group>"; };
@@ -117,15 +122,21 @@
 		F193EA4115AF48B4001CA48E /* VenueClassicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueClassicViewController.m; sourceTree = "<group>"; };
 		F193EA4715AF4987001CA48E /* InformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InformationViewController.h; sourceTree = "<group>"; };
 		F193EA4815AF4987001CA48E /* InformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InformationViewController.m; sourceTree = "<group>"; };
+		F1A1F34C15C41DE300FC44C8 /* doneup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = doneup.png; sourceTree = "<group>"; };
+		F1A1F34F15C41DEB00FC44C8 /* donedown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = donedown.png; sourceTree = "<group>"; };
+		F1A1F36415C41FB800FC44C8 /* KeyboardExtensionAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KeyboardExtensionAppDelegate.h; path = ../../iOSNumPadDoneButton/Classes/KeyboardExtensionAppDelegate.h; sourceTree = "<group>"; };
+		F1A1F36515C41FB800FC44C8 /* KeyboardExtensionAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KeyboardExtensionAppDelegate.m; path = ../../iOSNumPadDoneButton/Classes/KeyboardExtensionAppDelegate.m; sourceTree = "<group>"; };
 		F1C41D6615B792F800B3CB88 /* DisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisplayViewController.h; sourceTree = "<group>"; };
 		F1C41D6715B792F800B3CB88 /* DisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisplayViewController.m; sourceTree = "<group>"; };
 		F1C41D6B15B8D1B100B3CB88 /* alarmon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alarmon.png; sourceTree = "<group>"; };
+		F1CF677C15C047AF0029E100 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		F1CF678115C054900029E100 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		F1CF678315C0670D0029E100 /* MSCTY.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = MSCTY.mp3; sourceTree = "<group>"; };
 		FAD84AB415BC8F36007E4A6D /* LockScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LockScreenViewController.h; path = ../LockScreenViewController.h; sourceTree = "<group>"; };
 		FAD84AB515BC8F36007E4A6D /* LockScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LockScreenViewController.m; path = ../LockScreenViewController.m; sourceTree = "<group>"; };
 		FAD84ACE15BDFAF0007E4A6D /* lock_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lock_image.png; sourceTree = "<group>"; };
 		FAD84ACF15BDFAF0007E4A6D /* SlideToStop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SlideToStop.png; sourceTree = "<group>"; };
 		FAD84AD015BDFAF0007E4A6D /* SlideToStopBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SlideToStopBar.png; sourceTree = "<group>"; };
-		FAD84AD415BDFB0D007E4A6D /* Nothing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Nothing.png; path = ../../Downloads/SlideToUnlock/Nothing.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +144,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1441C4815C438280003DDBE /* MessageUI.framework in Frameworks */,
+				F1CF678215C054900029E100 /* AVFoundation.framework in Frameworks */,
+				F1CF677D15C047B00029E100 /* AudioToolbox.framework in Frameworks */,
 				F16ADF7815AE3AF0001E4722 /* UIKit.framework in Frameworks */,
 				F16ADF7A15AE3AF0001E4722 /* Foundation.framework in Frameworks */,
 				F16ADF7C15AE3AF0001E4722 /* CoreGraphics.framework in Frameworks */,
@@ -174,6 +188,9 @@
 		F16ADF7615AE3AF0001E4722 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F1441C4715C438280003DDBE /* MessageUI.framework */,
+				F1CF678115C054900029E100 /* AVFoundation.framework */,
+				F1CF677C15C047AF0029E100 /* AudioToolbox.framework */,
 				F16ADF7715AE3AF0001E4722 /* UIKit.framework */,
 				F16ADF7915AE3AF0001E4722 /* Foundation.framework */,
 				F16ADF7B15AE3AF0001E4722 /* CoreGraphics.framework */,
@@ -185,6 +202,8 @@
 		F16ADF7D15AE3AF0001E4722 /* VenueClassic */ = {
 			isa = PBXGroup;
 			children = (
+				F1A1F36415C41FB800FC44C8 /* KeyboardExtensionAppDelegate.h */,
+				F1A1F36515C41FB800FC44C8 /* KeyboardExtensionAppDelegate.m */,
 				FAD84AB415BC8F36007E4A6D /* LockScreenViewController.h */,
 				FAD84AB515BC8F36007E4A6D /* LockScreenViewController.m */,
 				F16ADF8615AE3AF0001E4722 /* VenueClassicAppDelegate.h */,
@@ -205,6 +224,7 @@
 		F16ADF7E15AE3AF0001E4722 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F1CF678315C0670D0029E100 /* MSCTY.mp3 */,
 				F111E17B15B586CF00237E41 /* ios_development-1.cer */,
 				F16ADF7F15AE3AF0001E4722 /* VenueClassic-Info.plist */,
 				F16ADF8015AE3AF0001E4722 /* InfoPlist.strings */,
@@ -236,9 +256,10 @@
 		F16ADFAC15AE3B1E001E4722 /* images */ = {
 			isa = PBXGroup;
 			children = (
-				FAD84AD415BDFB0D007E4A6D /* Nothing.png */,
 				FAD84ACE15BDFAF0007E4A6D /* lock_image.png */,
 				FAD84ACF15BDFAF0007E4A6D /* SlideToStop.png */,
+				F1A1F34F15C41DEB00FC44C8 /* donedown.png */,
+				F1A1F34C15C41DE300FC44C8 /* doneup.png */,
 				FAD84AD015BDFAF0007E4A6D /* SlideToStopBar.png */,
 				F175116F15BABF5800B4A37F /* Icon-72.png */,
 				F175117015BABF5800B4A37F /* Icon-72@2x.png */,
@@ -249,7 +270,6 @@
 				F175117515BABF5800B4A37F /* Icon.png */,
 				F175117615BABF5800B4A37F /* Icon@2x.png */,
 				F1C41D6B15B8D1B100B3CB88 /* alarmon.png */,
-				F1889A5F15B454B8007BD512 /* alarm.png */,
 				F193EA2015AEE5A8001CA48E /* beginshiftdown.png */,
 				F1889A5D15B447D9007BD512 /* endshiftup.png */,
 				F193EA2115AEE5A8001CA48E /* beginshiftup.png */,
@@ -363,7 +383,6 @@
 				F193EA3815AEE5A8001CA48E /* stopnextdown.png in Resources */,
 				F193EA3915AEE5A8001CA48E /* stopnextup.png in Resources */,
 				F1889A5E15B447D9007BD512 /* endshiftup.png in Resources */,
-				F1889A6015B454B8007BD512 /* alarm.png in Resources */,
 				F1C41D6C15B8D1B100B3CB88 /* alarmon.png in Resources */,
 				F175117715BABF5800B4A37F /* Icon-72.png in Resources */,
 				F175117815BABF5800B4A37F /* Icon-72@2x.png in Resources */,
@@ -376,7 +395,9 @@
 				FAD84AD115BDFAF0007E4A6D /* lock_image.png in Resources */,
 				FAD84AD215BDFAF0007E4A6D /* SlideToStop.png in Resources */,
 				FAD84AD315BDFAF0007E4A6D /* SlideToStopBar.png in Resources */,
-				FAD84AD515BDFB0D007E4A6D /* Nothing.png in Resources */,
+				F1CF678415C0670D0029E100 /* MSCTY.mp3 in Resources */,
+				F1A1F34D15C41DE300FC44C8 /* doneup.png in Resources */,
+				F1A1F35015C41DEB00FC44C8 /* donedown.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,6 +448,7 @@
 			files = (
 				F16ADFA315AE3AF0001E4722 /* VenueClassicTests.m in Sources */,
 				F1C41D6815B792F800B3CB88 /* DisplayViewController.m in Sources */,
+				F1A1F36615C41FB800FC44C8 /* KeyboardExtensionAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

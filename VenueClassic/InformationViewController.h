@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface InformationViewController : UIViewController {
-
+    
     IBOutlet UILabel *timerLabel1;
     IBOutlet UILabel *dateLabel1;
     IBOutlet UITextField *_name;

@@ -94,10 +94,10 @@
     self.timerLabel1.text = currentTime;
     
     timer = [NSTimer scheduledTimerWithTimeInterval:.1
-                                                    target:self
-                                                  selector:@selector(pollTime)
-                                                  userInfo:nil
-                                                   repeats:YES];
+                                             target:self
+                                           selector:@selector(pollTime)
+                                           userInfo:nil
+                                            repeats:YES];
     
     [dateLabel1 setNumberOfLines:0];
     [dateLabel1 setBackgroundColor:[UIColor clearColor]];
@@ -116,7 +116,7 @@
                                            selector:@selector(pollTime2)
                                            userInfo:nil
                                             repeats:YES];
-       
+    
 }
 
 - (void) pollTime
