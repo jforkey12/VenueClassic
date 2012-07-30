@@ -15,7 +15,6 @@
 @synthesize totalMassages;
 @synthesize totalMinutes;
 @synthesize timeString2;
-@synthesize minutesString;
 @synthesize timerLabel1;
 @synthesize dateLabel1;
 @synthesize _dateFormatter;
@@ -23,100 +22,105 @@
 @synthesize compSwitch;
 @synthesize compFormatter;
 @synthesize dateFormatter3;
+@synthesize addTimeDateFormatter;
 @synthesize doneButton;
-@synthesize active;
-@synthesize start;
+@synthesize startStop;
+@synthesize addDoneButton;
 
 @synthesize addTimeLabel;
 
 int totalMassages1;
-int totalMinutes2;
 int timeToAdd;
 
 
-NSDate *currentDate2;
 NSTimeInterval timeInterval2;
 NSDate *timerDate2;
-NSDateFormatter *dateFormatter2;
-
-NSDate *currentDate3;
-NSTimeInterval timeInterval3;
-NSDate *timerDate3;
 
 NSDate *compDate;
 NSTimeInterval compTimeInterval;
 NSDate *compTimerDate;
 
-NSDate *onPauseDate;
-NSTimeInterval onPauseTimeInterval;
-NSDate *newDate;
 
-NSDate *resumeDate;
-NSTimeInterval ResumeInterval;
+NSDate *addTimeDate;
+NSTimeInterval _pauseTimeInterval;
 
--(IBAction)startSecond:(id)sender {
+
+-(IBAction)startStop:(id)sender {
     
-    startDate = [NSDate date];
-    
-    dateTimer = [NSTimer scheduledTimerWithTimeInterval:.1
-                                                 target:self
-                                               selector:@selector(pollTime)
-                                               userInfo:nil
-                                                repeats:YES];
-    
-   if (start == 0)
-   {
-       [self setActive:YES];
-       NSLog(@"active value is %d", active);
-       
-    secondTimer = [NSTimer scheduledTimerWithTimeInterval:1.0/10.0 target:self selector:@selector(updateTimerSecond) userInfo:nil repeats:YES];
-       
-    totalTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateTotalTime) userInfo:nil repeats:YES];
-    }
-    else if (start == 1)
+    if ([startStop.titleLabel.text isEqualToString:@"Start"]) 
     {
-        if(active)
-        {
-            [self setActive:NO];
-            onPauseDate = [NSDate date]; 
-            onPauseTimeInterval = [onPauseDate timeIntervalSinceDate:newDate];
-            [secondTimer invalidate];
-        }
-        else if(!active)
-        {
-            NSDate *dateNow = [NSDate date];
-            [self setActive:YES];
-            resumeDate = [NSDate date];
-            newDate = [NSDate dateWithTimeInterval:-onPauseTimeInterval sinceDate:dateNow];
-            
-        }
+        [startStop setTitle:@"Pause" forState:UIControlStateNormal];
+        [startStop setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        
+        _startDate = [NSDate date];
+
+        secondTimer = [NSTimer scheduledTimerWithTimeInterval:.2 target:self selector:@selector(updateTimerSecond) userInfo:nil repeats:YES];
+        
+        totalMinutesTimer = [NSTimer scheduledTimerWithTimeInterval:.1 target:self selector:@selector(updateTotalTime) userInfo:nil repeats:YES];
+        
+        
+        
+    } else if ([startStop.titleLabel.text isEqualToString:@"Pause"])
+    {
+        [startStop setTitle:@"Resume" forState:UIControlStateNormal];
+        [startStop setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        
+        [secondTimer invalidate];
+        [totalMinutesTimer invalidate];
+        totalMinutesTimer =nil;
+        secondTimer = nil;
+        [self updateTotalTime];
+        [self updateTimerSecond];
+        
+    } else if ([startStop.titleLabel.text isEqualToString:@"Resume"])
+    {
+        [startStop setTitle:@"Pause" forState:UIControlStateNormal];
+        [startStop setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        
+        _startDate = [NSDate date];
+        _startDate = [_startDate dateByAddingTimeInterval:((-1)*(_pauseTimeInterval))];
+        secondTimer = [NSTimer scheduledTimerWithTimeInterval:.2 target:self selector:@selector(updateTimerSecond) userInfo:nil repeats:YES];
+        totalMinutesTimer = [NSTimer scheduledTimerWithTimeInterval:.1 target:self selector:@selector(updateTotalTime) userInfo:nil repeats:YES];
     }
 }
+    
+    
 -(void)updateTotalTime 
 {
-    currentDate2 = [NSDate date];
-    timeInterval2 = [currentDate2 timeIntervalSinceDate:startDate];
-    timerDate2 = [NSDate dateWithTimeIntervalSince1970:timeInterval2 +62];
+    NSDate *currentDate = [NSDate date];
     
-    dateFormatter2 = [[NSDateFormatter alloc] init];
-    [dateFormatter2 setDateFormat:@"mmm"];
-    [dateFormatter2 setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0.0]];
-    timeString2 = [dateFormatter2 stringFromDate:timerDate2];
-    totalMinutes.text = timeString2;
+    NSTimeInterval timeInterval = [currentDate timeIntervalSinceDate:_startDate];    
+    NSDate *timerDate = [NSDate dateWithTimeIntervalSince1970:timeInterval];
     
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"mmm"];
+    [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0.0]];
+    
+    NSString *timeString = [dateFormatter stringFromDate:timerDate];
+    
+    _pauseTimeInterval = timeInterval;
+    
+    totalMinutes.text = timeString;
 }
 
 
 -(void)updateTimerSecond 
 {
-    currentDate2 = [NSDate date];
-    timeInterval2 = [currentDate2 timeIntervalSinceDate:startDate];
-    timerDate2 = [NSDate dateWithTimeIntervalSince1970:-timeInterval2 +62];
+
+    NSDate *currentDate = [NSDate date];
     
-    dateFormatter2 = [[NSDateFormatter alloc] init];
-    [dateFormatter2 setDateFormat:@"mmm:ss"];
-    [dateFormatter2 setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0.0]];
-    timeString2 = [dateFormatter2 stringFromDate:timerDate2];
+    NSTimeInterval timeInterval = [currentDate timeIntervalSinceDate:_startDate];    
+    NSDate *timerDate = [NSDate dateWithTimeIntervalSince1970:-timeInterval];
+    
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"mmm:ss"];
+    [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0.0]];
+    
+    timeString2 = [dateFormatter stringFromDate:timerDate];;
+    _pauseTimeInterval = timeInterval;
+    
     secondLabel.text = timeString2;
     
     if ([secondLabel.text isEqualToString:@"000:59"]) 
@@ -139,19 +143,21 @@ NSTimeInterval ResumeInterval;
     {
         AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
     }
-    if([secondLabel.text isEqualToString:@"000:01"])
+    if([secondLabel.text isEqualToString:@"000:02"])
     {
         AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
-        audioPlayer.numberOfLoops = 0;
-        [audioPlayer play];
     }
     if ([secondLabel.text isEqualToString:@"000:00"])
     {
         [secondTimer invalidate];
+        [totalMinutesTimer invalidate];
+        audioPlayer.numberOfLoops = 0;
+        [audioPlayer play];
         [secondLabel setTextColor:[UIColor whiteColor]];
-        timeString2 = @"000:00";
-        secondLabel.text = @"000:00";
-         
+        [startStop setTitle:@"Start" forState:UIControlStateNormal];
+        [startStop setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+
+
     }
 
 }
@@ -160,8 +166,8 @@ NSTimeInterval ResumeInterval;
 {
     
     [addTimeLabel becomeFirstResponder];
-    
     [doneButton addTarget:self action:@selector(doneButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    
     // locate keyboard view
     UIWindow* tempWindow = [[[UIApplication sharedApplication] windows] objectAtIndex:1];
     UIView* keyboard = nil;
@@ -176,21 +182,8 @@ NSTimeInterval ResumeInterval;
                 [keyboard addSubview:doneButton];
         }
     }
-
-    
-    timeToAdd = 0;
-    
     addTimeLabel.hidden = false;
     
-    NSString *intString = [NSString stringWithFormat:@"%d", timeToAdd];
-    
-    addTimeLabel.text = intString;
-    
-    
-  // double convert = [timeString2 doubleValue] + [addTimeLabel.text doubleValue];
-    
-  //  NSString *convertToString = [[NSString alloc] initWithFormat:@"%d", convert];
-
 }
 
 
@@ -199,13 +192,13 @@ NSTimeInterval ResumeInterval;
     if (compSwitch.on) 
     {
         compDate = [NSDate date];
-        compTimeInterval = [currentDate2 timeIntervalSinceDate:startDate];
+      //  compTimeInterval = [*currentDate timeIntervalSinceDate:startDate];
         compTimerDate = [NSDate dateWithTimeIntervalSince1970:compTimeInterval];
         
         compFormatter = [[NSDateFormatter alloc] init];
         [compFormatter setDateFormat:@"mm:ss"];
         [compFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0.0]];
-        timeString2 = [compFormatter stringFromDate:timerDate2];
+        timeString2 = [compFormatter stringFromDate:timerDate2]; 
     }
 }
 
@@ -216,14 +209,18 @@ NSTimeInterval ResumeInterval;
     NSString *intString = [NSString stringWithFormat:@"%d Massages", totalMassages1];
     totalMassages.text = intString;
     
+    [startStop setTitle:@"Start" forState:UIControlStateNormal];
+    [startStop setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    
     [secondTimer invalidate];
+    
     [secondLabel setTextColor:[UIColor whiteColor]];
-    secondLabel.text = @"000:00";    
+    [secondLabel setText:@"000:00"];
 }
 
 - (void)viewDidLoad
 {
-        
+
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 3.2) {
         [[NSNotificationCenter defaultCenter] addObserver:self 
                                                  selector:@selector(keyboardDidShow:) 
@@ -263,12 +260,7 @@ NSTimeInterval ResumeInterval;
     NSString *currentTime2 = [self._dateFormatter2 stringFromDate: today2];
     self.dateLabel1.text = currentTime2;
     
-  /*  dateTimer2 = [NSTimer scheduledTimerWithTimeInterval:60
-                                             target:self
-                                           selector:@selector(pollTime2)
-                                           userInfo:nil
-                                            repeats:YES];
-*/
+
     NSURL *url = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/MSCTY.mp3", [[NSBundle mainBundle] resourcePath]]];
 	
 	NSError *error;
@@ -291,13 +283,7 @@ NSTimeInterval ResumeInterval;
     self.timerLabel1.text = currentTime;
 }
 
-/*- (void) pollTime2
-{
-    NSDate *today2 = [[NSDate alloc] init];
-    NSString *currentTime2 = [self._dateFormatter2 stringFromDate: today2];
-    self.dateLabel1.text = currentTime2;
-}
-*/
+
 - (void)didReceiveMemoryWarning
 {
     // Releases the view if it doesn't have a superview.
@@ -345,17 +331,17 @@ NSTimeInterval ResumeInterval;
 
 - (void)addButtonToKeyboard {
     // create custom button
-    UIButton *doneButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    doneButton.frame = CGRectMake(0, 163, 106, 53);
-    doneButton.adjustsImageWhenHighlighted = NO;
+     addDoneButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    addDoneButton.frame = CGRectMake(0, 163, 106, 53);
+    addDoneButton.adjustsImageWhenHighlighted = NO;
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 3.0) {
-        [doneButton setImage:[UIImage imageNamed:@"doneup.png"] forState:UIControlStateNormal];
-        [doneButton setImage:[UIImage imageNamed:@"donedown.png"] forState:UIControlStateHighlighted];
+        [addDoneButton setImage:[UIImage imageNamed:@"doneup.png"] forState:UIControlStateNormal];
+        [addDoneButton setImage:[UIImage imageNamed:@"donedown.png"] forState:UIControlStateHighlighted];
     } else {        
-        [doneButton setImage:[UIImage imageNamed:@"doneup.png"] forState:UIControlStateNormal];
-        [doneButton setImage:[UIImage imageNamed:@"donedown.png"] forState:UIControlStateHighlighted];
+        [addDoneButton setImage:[UIImage imageNamed:@"doneup.png"] forState:UIControlStateNormal];
+        [addDoneButton setImage:[UIImage imageNamed:@"donedown.png"] forState:UIControlStateHighlighted];
     }
-    [doneButton addTarget:self action:@selector(doneButton:) forControlEvents:UIControlEventTouchUpInside];
+    [addDoneButton addTarget:self action:@selector(doneButton:) forControlEvents:UIControlEventTouchUpInside];
     // locate keyboard view
     UIWindow* tempWindow = [[[UIApplication sharedApplication] windows] objectAtIndex:1];
     UIView* keyboard;
@@ -365,10 +351,10 @@ NSTimeInterval ResumeInterval;
         // keyboard found, add the button
         if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 3.2) {
             if([[keyboard description] hasPrefix:@"<UIPeripheralHost"] == YES)
-                [keyboard addSubview:doneButton];
+                [keyboard addSubview:addDoneButton];
         } else {
             if([[keyboard description] hasPrefix:@"<UIKeyboard"] == YES)
-                [keyboard addSubview:doneButton];
+                [keyboard addSubview:addDoneButton];
         }
     }
     
@@ -376,15 +362,25 @@ NSTimeInterval ResumeInterval;
 }
 
 - (void)doneButton:(id)sender {
+
+    NSInteger theInteger = [addTimeLabel.text intValue];
     
-    currentDate2 = [NSDate date];
-    timeInterval2 = [currentDate2 timeIntervalSinceDate:startDate];
-    timerDate2 = [NSDate dateWithTimeIntervalSince1970:-timeInterval2 +timeToAdd*60];
+   // if(addSubtract == @"add"){
+  //  timerDate2 = [timerDate2 dateWithTimeInterval:theInteger*60 sinceDate:timerDate2];
     
-    timeString2 = [dateFormatter2 stringFromDate:timerDate2];
+   addTimeDate = [timerDate2 dateByAddingTimeInterval:theInteger*60];
+
+    timeString2 = [_dateFormatter2 stringFromDate:addTimeDate];
     
-    addTimeLabel.hidden = TRUE;
+    secondLabel.text = timeString2;
+    
     [self.view endEditing:TRUE];
+    addTimeLabel.hidden =TRUE;
+  //  }
+    
+  //  else{
+    
+  //  }
 }
 
 -(IBAction)endShift:(id)sender

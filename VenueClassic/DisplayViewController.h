@@ -13,23 +13,17 @@
 
 @interface DisplayViewController : UIViewController <AVAudioPlayerDelegate, UITextFieldDelegate, MFMailComposeViewControllerDelegate> {
     
-    UILabel *mainLabel;
     UILabel *secondLabel;
-    UILabel *totalMassages;
-    UILabel *totalMinutes;
-    UILabel *timerLabel1;
-    UILabel *dateLabel1;
     
-    NSTimer *dateTimer;
-    NSTimer *mainTimer;
     NSTimer *secondTimer;
     NSTimer *compTimer;
-    NSTimer *dateTimer2;
+    NSTimer *secondTimer2;
+    NSTimer *totalMinutesTimer;
     
-    NSTimer *totalTimer;
     
     NSDate *startDateMain;
     NSDate *startDate;
+    NSDate *_startDate;
     NSDate *compDate;
     NSString *timeString2;
     NSString *minutesString;
@@ -37,6 +31,8 @@
     
     IBOutlet UITextField *addTimeLabel;
     
+    
+    NSDate *pauseStart, *previousFireDate, *dateNow; 
     
     UITextField *textField;
     UITextField *textField2;
@@ -46,29 +42,27 @@
     UIReturnKeyType _lastReturnKeyType;
     BOOL _keyboardIsShowing;
     
-    UITextField * weakRefTextField;
     
 }
 @property(nonatomic, retain)IBOutlet UILabel *secondLabel;
 @property(nonatomic, retain)IBOutlet UILabel *totalMassages;
 @property(nonatomic, retain)IBOutlet UILabel *totalMinutes;
 @property(nonatomic, retain)IBOutlet NSString *timeString2;
-@property(nonatomic, retain)IBOutlet NSString *minutesString;
 @property(nonatomic, retain)IBOutlet UILabel *timerLabel1;
 @property(nonatomic, retain)IBOutlet UILabel *dateLabel1;
 @property(nonatomic, retain) NSDateFormatter *_dateFormatter;
 @property(nonatomic, retain) NSDateFormatter *_dateFormatter2;
 @property(nonatomic, retain) NSDateFormatter *dateFormatter3;
+@property(nonatomic, retain) NSDateFormatter *addTimeDateFormatter;
 @property(nonatomic, retain)IBOutlet UIButton *doneButton;
-@property (nonatomic, assign) BOOL active;
-@property(nonatomic, assign) BOOL start;
-
+@property(nonatomic, retain) IBOutlet UIButton *startStop;
+@property(nonatomic, retain) IBOutlet UIButton *addDoneButton;
 @property(nonatomic, retain) UITextField *addTimeLabel;
 
 @property(nonatomic, retain) NSDateFormatter *compFormatter;
 @property(nonatomic, retain)IBOutlet UISwitch *compSwitch;
 
--(IBAction)startSecond:(id)sender;
+-(IBAction)startStop:(id)sender;
 -(IBAction)stopNext:(id)sender;
 -(IBAction)toggleEnabledForCompSwitch:(id)sender;
 -(IBAction)addTime:(id)sender;

@@ -161,11 +161,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ECh-nu-Gxi">
-                                <rect key="frame" x="160" y="354" width="140" height="45"/>
+                                <rect key="frame" x="160" y="355" width="140" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" image="endshiftup.png">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="End Shift" backgroundImage="blankUp.png">
+                                    <color key="titleColor" red="0.99215692281723022" green="1" blue="0.98823535442352295" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
@@ -177,11 +177,11 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="0Et-B0-7E6">
-                                <rect key="frame" x="20" y="354" width="140" height="45"/>
+                                <rect key="frame" x="12" y="355" width="140" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" image="stopnextup.png">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Stop / Next" backgroundImage="blankUp.png">
+                                    <color key="titleColor" red="1" green="1" blue="0.98823535442352295" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
@@ -192,18 +192,18 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="MyZ-yy-vNh">
-                                <rect key="frame" x="71" y="298" width="179" height="49"/>
+                                <rect key="frame" x="55" y="297" width="211" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" image="startpauseresumeup.png">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <state key="normal" title="Start" backgroundImage="blankUp.png">
+                                    <color key="titleColor" red="0.98823535442352295" green="1" blue="0.99215692281723022" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="startSecond:" destination="Dhz-q8-zZr" eventType="touchUpInside" id="KNn-hI-TJ4"/>
+                                    <action selector="startStop:" destination="Dhz-q8-zZr" eventType="touchUpInside" id="l4T-Wp-FoI"/>
                                 </connections>
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="cfR-kq-Sne">
@@ -278,7 +278,7 @@
                                                 </connections>
                                             </slider>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="slide to unlock" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="X7W-Kx-BYq">
-                                                <rect key="frame" x="93" y="-29" width="218" height="112"/>
+                                                <rect key="frame" x="93" y="-29" width="162" height="112"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="24"/>
                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -352,6 +352,7 @@
                         <outlet property="addTimeLabel" destination="Tnn-Hy-r0R" id="C8q-of-beu"/>
                         <outlet property="dateLabel1" destination="vmY-2C-ueb" id="5Wx-rf-CbA"/>
                         <outlet property="secondLabel" destination="NgP-FI-HWX" id="vEo-yi-ZIn"/>
+                        <outlet property="startStop" destination="MyZ-yy-vNh" id="E88-Xq-YvK"/>
                         <outlet property="timerLabel1" destination="h3p-RE-zdv" id="Eax-qy-2Ut"/>
                         <outlet property="totalMassages" destination="bUL-K5-gOR" id="5KX-qT-Lwh"/>
                         <outlet property="totalMinutes" destination="L8Y-f1-HMP" id="hIq-Jp-VR7"/>
@@ -475,13 +476,11 @@
         <image name="SlideToStopBar.png" width="280" height="52"/>
         <image name="alarmon.png" width="45" height="36"/>
         <image name="beginshiftup.png" width="211" height="50"/>
-        <image name="endshiftup.png" width="211" height="50"/>
+        <image name="blankUp.png" width="211" height="50"/>
         <image name="lock_image.png" width="95" height="80"/>
         <image name="mainscreen.png" width="320" height="480"/>
         <image name="nextup.png" width="211" height="50"/>
         <image name="resetup.png" width="211" height="50"/>
-        <image name="startpauseresumeup.png" width="211" height="50"/>
-        <image name="stopnextup.png" width="211" height="50"/>
     </resources>
     <classes>
         <class className="DisplayViewController" superclassName="UIViewController">
@@ -490,15 +489,16 @@
                 <relationship kind="action" name="LockIt"/>
                 <relationship kind="action" name="addTime:"/>
                 <relationship kind="action" name="endShift:"/>
-                <relationship kind="action" name="startSecond:"/>
+                <relationship kind="action" name="startStop:"/>
                 <relationship kind="action" name="stopNext:"/>
                 <relationship kind="action" name="toggleEnabledForCompSwitch:"/>
+                <relationship kind="outlet" name="addDoneButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="addTimeLabel" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="compSwitch" candidateClass="UISwitch"/>
                 <relationship kind="outlet" name="dateLabel1" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="doneButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="minutesString" candidateClass="NSString"/>
                 <relationship kind="outlet" name="secondLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="startStop" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="timeString2" candidateClass="NSString"/>
                 <relationship kind="outlet" name="timerLabel1" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="totalMassages" candidateClass="UILabel"/>
