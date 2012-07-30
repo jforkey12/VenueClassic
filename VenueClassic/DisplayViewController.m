@@ -183,7 +183,6 @@ NSTimeInterval _pauseTimeInterval;
         }
     }
     addTimeLabel.hidden = false;
-    
 }
 
 
@@ -213,6 +212,7 @@ NSTimeInterval _pauseTimeInterval;
     [startStop setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     
     [secondTimer invalidate];
+    [totalMinutesTimer invalidate];
     
     [secondLabel setTextColor:[UIColor whiteColor]];
     [secondLabel setText:@"000:00"];
@@ -365,22 +365,33 @@ NSTimeInterval _pauseTimeInterval;
 
     NSInteger theInteger = [addTimeLabel.text intValue];
     
-   // if(addSubtract == @"add"){
-  //  timerDate2 = [timerDate2 dateWithTimeInterval:theInteger*60 sinceDate:timerDate2];
-    
-   addTimeDate = [timerDate2 dateByAddingTimeInterval:theInteger*60];
-
-    timeString2 = [_dateFormatter2 stringFromDate:addTimeDate];
-    
-    secondLabel.text = timeString2;
+    if ([startStop.titleLabel.text isEqualToString:@"Pause"])
+    {
+        [startStop setTitle:@"Resume" forState:UIControlStateNormal];
+        [startStop setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        
+        [secondTimer invalidate];
+        [totalMinutesTimer invalidate];
+        totalMinutesTimer =nil;
+        secondTimer = nil;
+        [self updateTotalTime];
+        [self updateTimerSecond];
+        
+        
+    } else if ([startStop.titleLabel.text isEqualToString:@"Resume"])
+    {
+        [startStop setTitle:@"Pause" forState:UIControlStateNormal];
+        [startStop setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        
+        _startDate = [NSDate date];
+        _startDate = [_startDate dateByAddingTimeInterval:((-1)*(_pauseTimeInterval) +theInteger*60)];
+        secondTimer = [NSTimer scheduledTimerWithTimeInterval:.2 target:self selector:@selector(updateTimerSecond) userInfo:nil repeats:YES];
+        totalMinutesTimer = [NSTimer scheduledTimerWithTimeInterval:.1 target:self selector:@selector(updateTotalTime) userInfo:nil repeats:YES];
+    }
     
     [self.view endEditing:TRUE];
     addTimeLabel.hidden =TRUE;
-  //  }
     
-  //  else{
-    
-  //  }
 }
 
 -(IBAction)endShift:(id)sender
