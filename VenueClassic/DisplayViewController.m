@@ -26,8 +26,23 @@
 @synthesize doneButton;
 @synthesize startStop;
 @synthesize addDoneButton;
-
 @synthesize addTimeLabel;
+@synthesize slideToUnlock;  
+@synthesize lockButton;  
+@synthesize myLabel;  
+@synthesize container;
+@synthesize stopNextButton;
+@synthesize endShiftButton;
+@synthesize tableType;
+@synthesize plusButton;
+@synthesize minusButton;
+@synthesize compLabel;
+@synthesize totalLabel;
+@synthesize minutesLabel;
+@synthesize moneyLabel;
+@synthesize alarmImage;
+
+bool UNLOCKED = YES;
 
 int totalMassages1;
 int timeToAdd;
@@ -156,10 +171,7 @@ NSTimeInterval _pauseTimeInterval;
         [secondLabel setTextColor:[UIColor whiteColor]];
         [startStop setTitle:@"Start" forState:UIControlStateNormal];
         [startStop setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-
-
     }
-
 }
 
 -(IBAction)addTime:(id)sender
@@ -185,7 +197,6 @@ NSTimeInterval _pauseTimeInterval;
     addTimeLabel.hidden = false;
 }
 
-
 -(IBAction)toggleEnabledForCompSwitch:(id)sender 
 {
     if (compSwitch.on) 
@@ -200,7 +211,6 @@ NSTimeInterval _pauseTimeInterval;
         timeString2 = [compFormatter stringFromDate:timerDate2]; 
     }
 }
-
 
 -(IBAction)stopNext:(id)sender
 {
@@ -220,7 +230,19 @@ NSTimeInterval _pauseTimeInterval;
 
 - (void)viewDidLoad
 {
+    UIImage *stetchLeftTrack= [[UIImage imageNamed:@"Nothing.png"]
+                               stretchableImageWithLeftCapWidth:30.0 topCapHeight:0.0];
+	UIImage *stetchRightTrack= [[UIImage imageNamed:@"Nothing.png"]
+                                stretchableImageWithLeftCapWidth:30.0 topCapHeight:0.0];
+	[slideToUnlock setThumbImage: [UIImage imageNamed:@"SlideToStop.png"] forState:UIControlStateNormal];
+	[slideToUnlock setMinimumTrackImage:stetchLeftTrack forState:UIControlStateNormal];
+	[slideToUnlock setMaximumTrackImage:stetchRightTrack forState:UIControlStateNormal]; 
 
+    slideToUnlock.hidden = true;
+    myLabel.hidden = true;
+    container.hidden = true;
+    lockButton.hidden = false;
+    
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 3.2) {
         [[NSNotificationCenter defaultCenter] addObserver:self 
                                                  selector:@selector(keyboardDidShow:) 
@@ -266,7 +288,6 @@ NSTimeInterval _pauseTimeInterval;
 	NSError *error;
 	audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
 	audioPlayer.numberOfLoops = -1;
-                                                           
 }
 
 - (void) pollTotalTime
@@ -294,7 +315,6 @@ NSTimeInterval _pauseTimeInterval;
 
 #pragma mark - View lifecycle
 
-
 - (void)viewDidUnload
 {
     [super viewDidUnload];
@@ -307,8 +327,88 @@ NSTimeInterval _pauseTimeInterval;
 }
 
 -(IBAction)LockIt {    
-    [self performSegueWithIdentifier:@"LockSuccessful" sender:self];
+    if(UNLOCKED) {
+        slideToUnlock.hidden = false;
+        container.hidden = false;
+        myLabel.hidden = false;
+    
+        lockButton.hidden = true;
+        //secondLabel.hidden = true;
+        totalMassages.hidden = true;
+        totalMinutes.hidden = true;
+        timerLabel1.hidden = true;
+        dateLabel1.hidden = true;
+        doneButton.hidden = true;
+        startStop.hidden = true;
+        addDoneButton.hidden = true;
+        compSwitch.hidden = true;
+        addTimeLabel.hidden = true;
+        dateLabel1.hidden = true;
+        stopNextButton.hidden = true;
+        endShiftButton.hidden = true;
+        tableType.hidden = true;
+        plusButton.hidden = true;
+        minusButton.hidden = true;
+        compLabel.hidden = true;
+        totalLabel.hidden = true;
+        minutesLabel.hidden = true;
+        moneyLabel.hidden = true;
+        alarmImage.hidden = true;
+    
+        UNLOCKED = NO;
+    }
 }
+
+-(IBAction)UnLockIt {  
+    if (!UNLOCKED) {  
+        if (slideToUnlock.value == 1.0) {  
+            slideToUnlock.hidden = true;
+            slideToUnlock.value = 0.0;
+            container.hidden = true;
+            myLabel.hidden = true;
+            
+            lockButton.hidden = false;
+            //secondLabel.hidden = false;
+            totalMassages.hidden = false;
+            totalMinutes.hidden = false;
+            timerLabel1.hidden = false;
+            dateLabel1.hidden = false;
+            doneButton.hidden = false;
+            startStop.hidden = false;
+            addDoneButton.hidden = false;
+            compSwitch.hidden = false;
+            addTimeLabel.hidden = false;
+            dateLabel1.hidden = false;
+            stopNextButton.hidden = false;
+            endShiftButton.hidden = false;
+            tableType.hidden = false;
+            plusButton.hidden = false;
+            minusButton.hidden = false;
+            compLabel.hidden = false;
+            totalLabel.hidden = false;
+            minutesLabel.hidden = false;
+            moneyLabel.hidden = false;
+            alarmImage.hidden = false;
+            
+            UNLOCKED = YES;
+        } 
+        else {
+            // user did not slide far enough, so return back to 0 position  
+            [UIView beginAnimations: @"SlideCanceled" context: nil];  
+            [UIView setAnimationDelegate: self];  
+            [UIView setAnimationDuration: 0.35];  
+            
+            // use CurveEaseOut to create "spring" effect  
+            [UIView setAnimationCurve: UIViewAnimationCurveEaseOut];   
+            slideToUnlock.value = 0.0;
+            [UIView commitAnimations]; 
+        }  
+    }   
+}
+
+-(IBAction)fadeLabel {  
+    myLabel.alpha = slideToUnlock.maximumValue - slideToUnlock.value;
+}  
 
 -(IBAction)finishMassage:(id)sender {
     [self performSegueWithIdentifier:@"massageFinished" sender:self];
