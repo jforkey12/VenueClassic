@@ -8,9 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		F111E17C15B586CF00237E41 /* ios_development-1.cer in Resources */ = {isa = PBXBuildFile; fileRef = F111E17B15B586CF00237E41 /* ios_development-1.cer */; };
+		F126BAE615C7582900739C05 /* KeyboardExtensionAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F126BAE515C7582900739C05 /* KeyboardExtensionAppDelegate.m */; };
+		F126BAE715C7583800739C05 /* KeyboardExtensionAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F126BAE515C7582900739C05 /* KeyboardExtensionAppDelegate.m */; };
+		F126BAEA15C758E900739C05 /* blankdown.png in Resources */ = {isa = PBXBuildFile; fileRef = F126BAE815C758E900739C05 /* blankdown.png */; };
+		F126BAEB15C758E900739C05 /* blankUp.png in Resources */ = {isa = PBXBuildFile; fileRef = F126BAE915C758E900739C05 /* blankUp.png */; };
 		F1441C4815C438280003DDBE /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1441C4715C438280003DDBE /* MessageUI.framework */; };
-		F1441C4B15C578710003DDBE /* blankdown.png in Resources */ = {isa = PBXBuildFile; fileRef = F1441C4A15C578710003DDBE /* blankdown.png */; };
-		F1441C4D15C578770003DDBE /* blankUp.png in Resources */ = {isa = PBXBuildFile; fileRef = F1441C4C15C578770003DDBE /* blankUp.png */; };
 		F16ADF7815AE3AF0001E4722 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F16ADF7715AE3AF0001E4722 /* UIKit.framework */; };
 		F16ADF7A15AE3AF0001E4722 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F16ADF7915AE3AF0001E4722 /* Foundation.framework */; };
 		F16ADF7C15AE3AF0001E4722 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F16ADF7B15AE3AF0001E4722 /* CoreGraphics.framework */; };
@@ -52,7 +54,6 @@
 		F193EA4915AF4987001CA48E /* InformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F193EA4815AF4987001CA48E /* InformationViewController.m */; };
 		F1A1F34D15C41DE300FC44C8 /* doneup.png in Resources */ = {isa = PBXBuildFile; fileRef = F1A1F34C15C41DE300FC44C8 /* doneup.png */; };
 		F1A1F35015C41DEB00FC44C8 /* donedown.png in Resources */ = {isa = PBXBuildFile; fileRef = F1A1F34F15C41DEB00FC44C8 /* donedown.png */; };
-		F1A1F36615C41FB800FC44C8 /* KeyboardExtensionAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F1A1F36515C41FB800FC44C8 /* KeyboardExtensionAppDelegate.m */; };
 		F1C41D6815B792F800B3CB88 /* DisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1C41D6715B792F800B3CB88 /* DisplayViewController.m */; };
 		F1C41D6A15B793AA00B3CB88 /* DisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1C41D6715B792F800B3CB88 /* DisplayViewController.m */; };
 		F1C41D6C15B8D1B100B3CB88 /* alarmon.png in Resources */ = {isa = PBXBuildFile; fileRef = F1C41D6B15B8D1B100B3CB88 /* alarmon.png */; };
@@ -77,9 +78,11 @@
 
 /* Begin PBXFileReference section */
 		F111E17B15B586CF00237E41 /* ios_development-1.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ios_development-1.cer"; sourceTree = "<group>"; };
+		F126BAE415C7582900739C05 /* KeyboardExtensionAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyboardExtensionAppDelegate.h; sourceTree = "<group>"; };
+		F126BAE515C7582900739C05 /* KeyboardExtensionAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyboardExtensionAppDelegate.m; sourceTree = "<group>"; };
+		F126BAE815C758E900739C05 /* blankdown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blankdown.png; sourceTree = "<group>"; };
+		F126BAE915C758E900739C05 /* blankUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blankUp.png; sourceTree = "<group>"; };
 		F1441C4715C438280003DDBE /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
-		F1441C4A15C578710003DDBE /* blankdown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blankdown.png; path = ../../Downloads/blankdown.png; sourceTree = "<group>"; };
-		F1441C4C15C578770003DDBE /* blankUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blankUp.png; path = ../../Downloads/blankUp.png; sourceTree = "<group>"; };
 		F16ADF7315AE3AF0001E4722 /* VenueClassic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VenueClassic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F16ADF7715AE3AF0001E4722 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F16ADF7915AE3AF0001E4722 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -128,8 +131,6 @@
 		F193EA4815AF4987001CA48E /* InformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InformationViewController.m; sourceTree = "<group>"; };
 		F1A1F34C15C41DE300FC44C8 /* doneup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = doneup.png; sourceTree = "<group>"; };
 		F1A1F34F15C41DEB00FC44C8 /* donedown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = donedown.png; sourceTree = "<group>"; };
-		F1A1F36415C41FB800FC44C8 /* KeyboardExtensionAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KeyboardExtensionAppDelegate.h; path = ../../iOSNumPadDoneButton/Classes/KeyboardExtensionAppDelegate.h; sourceTree = "<group>"; };
-		F1A1F36515C41FB800FC44C8 /* KeyboardExtensionAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KeyboardExtensionAppDelegate.m; path = ../../iOSNumPadDoneButton/Classes/KeyboardExtensionAppDelegate.m; sourceTree = "<group>"; };
 		F1C41D6615B792F800B3CB88 /* DisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisplayViewController.h; sourceTree = "<group>"; };
 		F1C41D6715B792F800B3CB88 /* DisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisplayViewController.m; sourceTree = "<group>"; };
 		F1C41D6B15B8D1B100B3CB88 /* alarmon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alarmon.png; sourceTree = "<group>"; };
@@ -206,8 +207,8 @@
 		F16ADF7D15AE3AF0001E4722 /* VenueClassic */ = {
 			isa = PBXGroup;
 			children = (
-				F1A1F36415C41FB800FC44C8 /* KeyboardExtensionAppDelegate.h */,
-				F1A1F36515C41FB800FC44C8 /* KeyboardExtensionAppDelegate.m */,
+				F126BAE415C7582900739C05 /* KeyboardExtensionAppDelegate.h */,
+				F126BAE515C7582900739C05 /* KeyboardExtensionAppDelegate.m */,
 				FAD84AB415BC8F36007E4A6D /* LockScreenViewController.h */,
 				FAD84AB515BC8F36007E4A6D /* LockScreenViewController.m */,
 				F16ADF8615AE3AF0001E4722 /* VenueClassicAppDelegate.h */,
@@ -260,8 +261,8 @@
 		F16ADFAC15AE3B1E001E4722 /* images */ = {
 			isa = PBXGroup;
 			children = (
-				F1441C4C15C578770003DDBE /* blankUp.png */,
-				F1441C4A15C578710003DDBE /* blankdown.png */,
+				F126BAE815C758E900739C05 /* blankdown.png */,
+				F126BAE915C758E900739C05 /* blankUp.png */,
 				FAD84ACE15BDFAF0007E4A6D /* lock_image.png */,
 				FAD84ACF15BDFAF0007E4A6D /* SlideToStop.png */,
 				F1A1F34F15C41DEB00FC44C8 /* donedown.png */,
@@ -404,8 +405,8 @@
 				F1CF678415C0670D0029E100 /* MSCTY.mp3 in Resources */,
 				F1A1F34D15C41DE300FC44C8 /* doneup.png in Resources */,
 				F1A1F35015C41DEB00FC44C8 /* donedown.png in Resources */,
-				F1441C4B15C578710003DDBE /* blankdown.png in Resources */,
-				F1441C4D15C578770003DDBE /* blankUp.png in Resources */,
+				F126BAEA15C758E900739C05 /* blankdown.png in Resources */,
+				F126BAEB15C758E900739C05 /* blankUp.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,6 +442,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F126BAE715C7583800739C05 /* KeyboardExtensionAppDelegate.m in Sources */,
 				F1C41D6A15B793AA00B3CB88 /* DisplayViewController.m in Sources */,
 				F16ADF8415AE3AF0001E4722 /* main.m in Sources */,
 				F16ADF8815AE3AF0001E4722 /* VenueClassicAppDelegate.m in Sources */,
@@ -456,7 +458,7 @@
 			files = (
 				F16ADFA315AE3AF0001E4722 /* VenueClassicTests.m in Sources */,
 				F1C41D6815B792F800B3CB88 /* DisplayViewController.m in Sources */,
-				F1A1F36615C41FB800FC44C8 /* KeyboardExtensionAppDelegate.m in Sources */,
+				F126BAE615C7582900739C05 /* KeyboardExtensionAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
