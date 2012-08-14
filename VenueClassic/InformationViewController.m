@@ -2,11 +2,12 @@
 //  InformationViewController.m
 //  VenueClassic
 //
-//  Created by James Forkey on 7/12/12.
-//  Copyright (c) 2012 Worcester State College. All rights reserved.
+//  Created by H&F Solutions.
+//  Copyright 2012 H&F Solutions. All rights reserved.
 //
 
 #import "InformationViewController.h"
+#import "DisplayViewController.h"
 
 @interface InformationViewController ()
 
@@ -24,6 +25,13 @@
 @synthesize _dateFormatter;
 @synthesize _dateFormatter2;
 @synthesize alertsuccess;
+@synthesize tableType;
+@synthesize tablesString;
+@synthesize userTypeString;
+@synthesize casinoString;
+@synthesize nameString;
+@synthesize emailString;
+@synthesize shiftNumberString;
 
 - (IBAction)textFieldFinished:(id) textField
 {
@@ -36,6 +44,7 @@
     else if (textField == _shift_number ) {
         [ _shift_number resignFirstResponder ];
     }
+
 }
 
 -(IBAction)backgroundTouched:(id)textField
@@ -51,13 +60,6 @@
     }    
 }
 
-- (void) updateTimer 
-{
-    
-    NSDateFormatter *formatter = [[NSDateFormatter alloc ] init];
-    timerLabel1.text = [formatter stringFromDate:[NSDate date]];
-}
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -69,6 +71,10 @@
 
 - (void)viewDidLoad
 {
+    userTypeString = @"Patron";
+    casinoString = @"Foxwoods";
+    tablesString = @"Poker";
+    
     [timerLabel1 setNumberOfLines:0];
     [timerLabel1 setBackgroundColor:[UIColor clearColor]];
     [timerLabel1 setFont:[UIFont boldSystemFontOfSize:14]];
@@ -88,7 +94,7 @@
     
     NSDate *today = [[NSDate alloc] init];
     _dateFormatter = [[NSDateFormatter alloc] init];
-    [self._dateFormatter setDateFormat:@"H:mm a"];
+    [self._dateFormatter setDateFormat:@"h:mm a"];
     
     NSString *currentTime = [self._dateFormatter stringFromDate: today];
     self.timerLabel1.text = currentTime;
@@ -139,6 +145,30 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
+-(IBAction)tables:(id)sender{
+	if(tableType.selectedSegmentIndex == 0){
+    tablesString = @"Poker";
+	}
+	if(tableType.selectedSegmentIndex == 1){
+    tablesString = @"Tables";
+	}
+}
+-(IBAction)casino:(id)sender{
+	if(_casino.selectedSegmentIndex == 0){
+        casinoString = @"Foxwoods";
+	}
+	if(_casino.selectedSegmentIndex == 1){
+        casinoString = @"Mohegan";
+	}
+}
+-(IBAction)user:(id)sender{
+	if(_user_type.selectedSegmentIndex == 0){
+        userTypeString = @"Patron";
+	}
+	if(_user_type.selectedSegmentIndex == 1){
+        userTypeString = @"Employee";
+	}
+}
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
@@ -173,9 +203,25 @@
     if (error_count > 0) {
         [checkFieldsFail show];
     }
+    
     else {
         [self performSegueWithIdentifier:@"ValidationSucceeded" sender:self];
     }
 }
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+     InformationViewController *controller = (InformationViewController *)segue.destinationViewController;
+    emailString = [_email text];
+    nameString = [_name text];
+    shiftNumberString = [_shift_number text];
+    controller.casinoString = casinoString;
+    controller.userTypeString = userTypeString;
+    controller.tablesString = tablesString;
+    controller.shiftNumberString = shiftNumberString;
+    controller.nameString = nameString;
+    controller.emailString = emailString;
+
+}
+
+
 
 @end

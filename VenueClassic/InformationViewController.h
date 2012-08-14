@@ -2,41 +2,42 @@
 //  InformationViewController.h
 //  VenueClassic
 //
-//  Created by James Forkey on 7/12/12.
-//  Copyright (c) 2012 Worcester State College. All rights reserved.
+//  Created by H&F Solutions.
+//  Copyright 2012 H&F Solutions. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface InformationViewController : UIViewController {
-    
-    IBOutlet UILabel *timerLabel1;
-    IBOutlet UILabel *dateLabel1;
-    IBOutlet UITextField *_name;
-    IBOutlet UITextField *_email;
-    IBOutlet UITextField *_shift_number;
-    IBOutlet UISegmentedControl *_user_type;
-    IBOutlet UISegmentedControl *_casino;
+@interface InformationViewController : UIViewController <UITextFieldDelegate> {
     
     NSTimer *timer;
     NSDateFormatter *_dateFormatter;
     NSDateFormatter *_dateFormatter2;
 }
 
-@property (nonatomic, retain) UILabel *timerLabel1;
-@property (nonatomic, retain) UITextField *_name;
-@property (nonatomic, retain) UITextField *_email;
-@property (nonatomic, retain) UITextField *_shift_number;
-@property (nonatomic, retain) UISegmentedControl *_user_type;
-@property (nonatomic, retain) UISegmentedControl *_casino;
-@property (nonatomic, retain) NSDateFormatter *_dateFormatter;
-@property (nonatomic, retain) UILabel *dateLabel1;
-@property (nonatomic, retain) NSDateFormatter *_dateFormatter2;
-@property (nonatomic, retain) UIAlertView *alertsuccess;
+@property(nonatomic, retain) IBOutlet UILabel *timerLabel1;
+@property(nonatomic, retain) IBOutlet UITextField *_name;
+@property(nonatomic, retain) IBOutlet UITextField *_email;
+@property(nonatomic, retain) IBOutlet UITextField *_shift_number;
+@property(nonatomic, retain) IBOutlet UISegmentedControl *_user_type;
+@property(nonatomic, retain) IBOutlet UISegmentedControl *_casino;
+@property(nonatomic, retain) NSDateFormatter *_dateFormatter;
+@property(nonatomic, retain) IBOutlet UILabel *dateLabel1;
+@property(nonatomic, retain) NSDateFormatter *_dateFormatter2;
+@property(nonatomic, retain) UIAlertView *alertsuccess;
+@property(nonatomic, retain) IBOutlet UISegmentedControl *tableType;
+@property(nonatomic, retain) NSString *tablesString;
+@property(nonatomic, retain) NSString *casinoString;
+@property(nonatomic, retain) NSString *userTypeString;
+@property(nonatomic, retain) NSString *shiftNumberString;
+@property(nonatomic, retain) NSString *emailString;
+@property(nonatomic, retain) NSString *nameString;
 
 -(IBAction)textFieldFinished:(id) textField;
 -(IBAction)backgroundTouched:(id)textField;
--(void)updateTimer;
+-(IBAction)tables:(id)sender;
+-(IBAction)casino:(id)sender;
+-(IBAction)user:(id)sender;
 
 -(IBAction)CheckFieldsAlert:(id)sender;
 

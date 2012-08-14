@@ -2,8 +2,8 @@
 //  InformationViewController.h
 //  VenueClassic
 //
-//  Created by James Forkey on 7/12/12.
-//  Copyright (c) 2012 Worcester State College. All rights reserved.
+//  Created by H&F Solutions.
+//  Copyright 2012 H&F Solutions. All rights reserved.
 //
 
 

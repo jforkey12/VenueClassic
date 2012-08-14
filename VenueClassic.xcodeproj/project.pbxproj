@@ -29,6 +29,7 @@
 		F16ADFB415AE3B46001E4722 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F16ADFB215AE3B46001E4722 /* Default@2x.png */; };
 		F16ADFB615AE3B4D001E4722 /* mainscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = F16ADFB515AE3B4D001E4722 /* mainscreen.png */; };
 		F16ADFB815AE3B57001E4722 /* mainscreen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F16ADFB715AE3B57001E4722 /* mainscreen@2x.png */; };
+		F1742C0A15C9558B0020110F /* EndAppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1742C0915C9558B0020110F /* EndAppViewController.m */; };
 		F175117715BABF5800B4A37F /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = F175116F15BABF5800B4A37F /* Icon-72.png */; };
 		F175117815BABF5800B4A37F /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F175117015BABF5800B4A37F /* Icon-72@2x.png */; };
 		F175117915BABF5800B4A37F /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = F175117115BABF5800B4A37F /* Icon-Small-50.png */; };
@@ -103,6 +104,8 @@
 		F16ADFB215AE3B46001E4722 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		F16ADFB515AE3B4D001E4722 /* mainscreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mainscreen.png; sourceTree = "<group>"; };
 		F16ADFB715AE3B57001E4722 /* mainscreen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mainscreen@2x.png"; sourceTree = "<group>"; };
+		F1742C0815C9558B0020110F /* EndAppViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EndAppViewController.h; sourceTree = "<group>"; };
+		F1742C0915C9558B0020110F /* EndAppViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EndAppViewController.m; sourceTree = "<group>"; };
 		F175116F15BABF5800B4A37F /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
 		F175117015BABF5800B4A37F /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72@2x.png"; sourceTree = "<group>"; };
 		F175117115BABF5800B4A37F /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = "<group>"; };
@@ -212,6 +215,8 @@
 				F193EA4115AF48B4001CA48E /* VenueClassicViewController.m */,
 				F193EA4715AF4987001CA48E /* InformationViewController.h */,
 				F193EA4815AF4987001CA48E /* InformationViewController.m */,
+				F1742C0815C9558B0020110F /* EndAppViewController.h */,
+				F1742C0915C9558B0020110F /* EndAppViewController.m */,
 				F1C41D6615B792F800B3CB88 /* DisplayViewController.h */,
 				F1C41D6715B792F800B3CB88 /* DisplayViewController.m */,
 				F16ADF8915AE3AF0001E4722 /* MainStoryboard.storyboard */,
@@ -443,6 +448,7 @@
 				F16ADF8815AE3AF0001E4722 /* VenueClassicAppDelegate.m in Sources */,
 				F193EA4215AF48B4001CA48E /* VenueClassicViewController.m in Sources */,
 				F193EA4915AF4987001CA48E /* InformationViewController.m in Sources */,
+				F1742C0A15C9558B0020110F /* EndAppViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

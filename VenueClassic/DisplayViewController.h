@@ -2,16 +2,19 @@
 //  NSTimerViewController.h
 //  NSTimer
 //
-//  Created by Lenzo on 29.10.11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Created by H&F Solutions.
+//  Copyright 2012 H&F Solutions. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import "AVFoundation/AVFoundation.h"
 #import "AudioToolbox/AudioToolbox.h"
 #import "MessageUI/MFMailComposeViewController.h"
+#import "InformationViewController.h"
+#import "MessageUI/MessageUI.h"
 
-@interface DisplayViewController : UIViewController <AVAudioPlayerDelegate, UITextFieldDelegate, MFMailComposeViewControllerDelegate> {
+@interface DisplayViewController : UIViewController <AVAudioPlayerDelegate, UITextFieldDelegate, MFMailComposeViewControllerDelegate, UIAlertViewDelegate> {
+    
     
     UILabel *secondLabel;
     
@@ -19,6 +22,8 @@
     NSTimer *compTimer;
     NSTimer *secondTimer2;
     NSTimer *totalMinutesTimer;
+    NSTimer *totalMoneyTimer;
+    NSTimer *timer;
     
     NSDate *startDateMain;
     NSDate *startDate;
@@ -27,8 +32,6 @@
     NSString *timeString2;
     NSString *minutesString;
     AVAudioPlayer *audioPlayer;
-    
-    IBOutlet UITextField *addTimeLabel;
     
     NSDate *pauseStart, *previousFireDate, *dateNow; 
     
@@ -68,15 +71,16 @@
 @property(nonatomic, retain) NSDateFormatter *_dateFormatter2;
 @property(nonatomic, retain) NSDateFormatter *dateFormatter3;
 @property(nonatomic, retain) NSDateFormatter *addTimeDateFormatter;
+@property(nonatomic, retain) NSDateFormatter *currentTimeDateFormatter;
 @property(nonatomic, retain)IBOutlet UIButton *doneButton;
 @property(nonatomic, retain) IBOutlet UIButton *startStop;
 @property(nonatomic, retain) IBOutlet UIButton *addDoneButton;
-@property(nonatomic, retain) UITextField *addTimeLabel;
 @property(nonatomic, retain) NSDateFormatter *compFormatter;
 @property(nonatomic, retain)IBOutlet UISwitch *compSwitch;
 @property(nonatomic, retain)IBOutlet UISlider *slideToUnlock;
 @property(nonatomic, retain)IBOutlet UIButton *lockButton;
 @property(nonatomic, retain)IBOutlet UILabel *myLabel;
+@property(nonatomic, retain)IBOutlet UITextField *addTimeTextField;
 @property(nonatomic, retain)IBOutlet UIImageView *container;
 @property(nonatomic, retain)IBOutlet UIButton *stopNextButton;
 @property(nonatomic, retain)IBOutlet UIButton *endShiftButton;
@@ -88,6 +92,16 @@
 @property(nonatomic, retain)IBOutlet UILabel *minutesLabel;
 @property(nonatomic, retain)IBOutlet UILabel *moneyLabel;
 @property(nonatomic, retain)IBOutlet UIImageView *alarmImage;
+@property(nonatomic, retain) NSString *casinoString;
+@property(nonatomic, retain) NSString *shiftNumberString;
+@property(nonatomic, retain) NSString *emailString;
+@property(nonatomic, retain) NSString *tablesString;
+@property(nonatomic, retain) NSString *userTypeString;
+@property(nonatomic, retain) NSString *nameString;
+@property(nonatomic, retain) NSCalendar *gregorian;
+@property(nonatomic, retain) NSDateComponents *components;
+@property(nonatomic, retain) NSCalendar *totalTimeGregorian;
+@property(nonatomic, retain) NSDateComponents *timeComponents;
 
 -(IBAction)UnLockIt;  
 -(IBAction)fadeLabel; 
@@ -96,7 +110,7 @@
 -(IBAction)toggleEnabledForCompSwitch:(id)sender;
 -(IBAction)addTime:(id)sender;
 -(IBAction)endShift:(id)sender;
-
+-(IBAction)subtractTime:(id)sender;
 -(IBAction)LockIt;  
 
 @end

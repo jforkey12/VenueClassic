@@ -1,18 +1,15 @@
 //
-//  VenueClassicViewController.m
+//  EndAppViewController.m
 //  VenueClassic
 //
-//  Created by H&F Solutions.
-//  Copyright 2012 H&F Solutions. All rights reserved.
+//  Created by James Forkey on 8/1/12.
+//  Copyright (c) 2012 Worcester State College. All rights reserved.
 //
 
-#import "VenueClassicViewController.h"
+#import "EndAppViewController.h"
 
-@interface VenueClassicViewController ()
-
-@end
-
-@implementation VenueClassicViewController
+@implementation EndAppViewController
+@synthesize reset;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -40,4 +37,9 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+-(IBAction)reset:(id)sender{
+    UIViewController *parent = self.parentViewController;
+    
+    [parent.parentViewController dismissModalViewControllerAnimated:YES];
+}
 @end

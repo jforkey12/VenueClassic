@@ -17,28 +17,15 @@
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "VenueClassic/InformationViewController.m"
-         timestampString = "364438076.745912"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "70"
-         endingLineNumber = "70"
-         landmarkName = "-viewDidLoad"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
          shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "VenueClassic/DisplayViewController.h"
-         timestampString = "365367183.989486"
+         timestampString = "366476785.645578"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "32"
-         endingLineNumber = "32"
+         startingLineNumber = "37"
+         endingLineNumber = "37"
          landmarkName = "@interface DisplayViewController"
          landmarkType = "2">
       </FileBreakpoint>
@@ -46,26 +33,26 @@
          shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "VenueClassic/DisplayViewController.m"
-         timestampString = "364951369.693623"
+         filePath = "VenueClassic/InformationViewController.h"
+         timestampString = "366632540.206624"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "13"
-         endingLineNumber = "13"
-         landmarkName = "@implementation DisplayViewController"
-         landmarkType = "3">
+         startingLineNumber = "42"
+         endingLineNumber = "42"
+         landmarkName = "-CheckFieldsAlert:"
+         landmarkType = "4">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "No"
+         shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "VenueClassic/DisplayViewController.m"
-         timestampString = "365373432.776238"
+         filePath = "VenueClassic/EndAppViewController.m"
+         timestampString = "366633290.103502"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "50"
-         endingLineNumber = "50"
-         landmarkName = "-startStop:"
+         startingLineNumber = "43"
+         endingLineNumber = "43"
+         landmarkName = "-reset:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
