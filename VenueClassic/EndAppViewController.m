@@ -23,7 +23,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    // Do any additional setup after loading the view.
 }
 
 - (void)viewDidUnload
@@ -38,8 +38,6 @@
 }
 
 -(IBAction)reset:(id)sender{
-    UIViewController *parent = self.parentViewController;
-    
-    [parent.parentViewController dismissModalViewControllerAnimated:YES];
-}
+        
+     }
 @end

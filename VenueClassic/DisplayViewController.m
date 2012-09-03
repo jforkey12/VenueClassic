@@ -26,7 +26,6 @@
 @synthesize addTimeDateFormatter;
 @synthesize doneButton;
 @synthesize startStop;
-@synthesize addDoneButton;
 @synthesize addTimeTextField;
 @synthesize slideToUnlock;  
 @synthesize lockButton;  
@@ -95,7 +94,7 @@ NSTimeInterval _pauseTimeInterval;
         
         totalMinutesTimer = [NSTimer scheduledTimerWithTimeInterval:.1 target:self selector:@selector(updateTotalTime) userInfo:nil repeats:YES];
             
-        totalMoneyTimer = [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(updateTotalMoney) userInfo:nil repeats:YES];
+        totalMoneyTimer = [NSTimer scheduledTimerWithTimeInterval:.75 target:self selector:@selector(updateTotalMoney) userInfo:nil repeats:YES];
    
         }
         else {
@@ -127,7 +126,7 @@ NSTimeInterval _pauseTimeInterval;
         
         secondTimer = [NSTimer scheduledTimerWithTimeInterval:.2 target:self selector:@selector(updateTimerSecond) userInfo:nil repeats:YES];
         totalMinutesTimer = [NSTimer scheduledTimerWithTimeInterval:.1 target:self selector:@selector(updateTotalTime) userInfo:nil repeats:YES];
-        totalMoneyTimer = [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(updateTotalMoney) userInfo:nil repeats:YES];
+        totalMoneyTimer = [NSTimer scheduledTimerWithTimeInterval:.75 target:self selector:@selector(updateTotalMoney) userInfo:nil repeats:YES];
         
     }
 }
@@ -158,6 +157,65 @@ NSTimeInterval _pauseTimeInterval;
     moneyLabel.text = temp;
 }
 
+-(void)cancelNumberPad{
+    [addTimeTextField resignFirstResponder];
+    [addTimeTextField setText:@""];
+    [addTimeTextField setHidden:YES];
+}
+
+-(void)doneWithNumberPad{
+    
+    int theInteger; 
+    theInteger = [[addTimeTextField text] intValue];
+    
+    if ([startStop.titleLabel.text isEqualToString:@"Pause"])
+    {
+        [startStop setTitle:@"Resume" forState:UIControlStateNormal];
+        [startStop setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        
+        [secondTimer invalidate];
+        [totalMinutesTimer invalidate];
+        [totalMoneyTimer invalidate];
+        totalMoneyTimer = nil;
+        totalMinutesTimer =nil;
+        secondTimer = nil;
+        [self updateTotalMoney];
+        [self updateTotalTime];
+        [self updateTimerSecond];
+        
+        
+    } else if ([startStop.titleLabel.text isEqualToString:@"Resume"])
+    {
+        
+        [startStop setTitle:@"Pause" forState:UIControlStateNormal];
+        [startStop setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        
+        _startDate = [NSDate date];
+        _startDate = [_startDate dateByAddingTimeInterval:(-1)*(_pauseTimeInterval)+((theInteger*60)*addOrSubtract)];
+        secondTimer = [NSTimer scheduledTimerWithTimeInterval:.2 target:self selector:@selector(updateTimerSecond) userInfo:nil repeats:YES];
+        totalMinutesTimer = [NSTimer scheduledTimerWithTimeInterval:.1 target:self selector:@selector(updateTotalTime) userInfo:nil repeats:YES];
+        totalMoneyTimer = [NSTimer scheduledTimerWithTimeInterval:.75 target:self selector:@selector(updateTotalMoney) userInfo:nil repeats:YES];
+    }
+    
+    else if ([startStop.titleLabel.text isEqualToString:@"Start"])
+    {
+        [startStop setTitle:@"Pause" forState:UIControlStateNormal];
+        [startStop setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        
+        _startDate = [NSDate date];
+        _startDate = [_startDate dateByAddingTimeInterval:((theInteger*60)*addOrSubtract)];
+        secondTimer = [NSTimer scheduledTimerWithTimeInterval:.2 target:self selector:@selector(updateTimerSecond) userInfo:nil repeats:YES];
+        totalMinutesTimer = [NSTimer scheduledTimerWithTimeInterval:.1 target:self selector:@selector(updateTotalTime) userInfo:nil repeats:YES];
+        totalMoneyTimer = [NSTimer scheduledTimerWithTimeInterval:.75 target:self selector:@selector(updateTotalMoney) userInfo:nil repeats:YES];
+        
+    }
+    
+    [self.view endEditing:TRUE];
+    [addTimeTextField setText:@""];
+    addTimeTextField.hidden =TRUE;
+    
+    [addTimeTextField resignFirstResponder];
+}
 
 -(void)updateTimerSecond 
 {
@@ -233,6 +291,11 @@ NSTimeInterval _pauseTimeInterval;
         
     }
     
+    else if ([startStop.titleLabel.text isEqualToString:@"Start"])
+    {
+        [secondLabel setText:@"00:00:00"];
+    }
+    
     [addTimeTextField becomeFirstResponder];
     [doneButton addTarget:self action:@selector(doneButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     
@@ -267,12 +330,17 @@ NSTimeInterval _pauseTimeInterval;
     [self updateTimerSecond];
     addOrSubtract = 1;
     
+    
      if ([startStop.titleLabel.text isEqualToString:@"Pause"])
     {
         [startStop setTitle:@"Resume" forState:UIControlStateNormal];
         [startStop setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     
     }
+     else if ([startStop.titleLabel.text isEqualToString:@"Start"])
+     {
+         [secondLabel setText:@"00:00:00"];
+     }
    
     [addTimeTextField becomeFirstResponder];
     [doneButton addTarget:self action:@selector(doneButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
@@ -367,14 +435,26 @@ NSTimeInterval _pauseTimeInterval;
 
 - (void)viewDidLoad
 {
+    _startDate = nil;
+    totalMassages1 = 0;
+
     if (userTypeString == @"Patron"){
         rate = 2;
-        smallRate = .05;
+        smallRate = .025;
     }
     else {
         rate =1;
-        smallRate = .025;
+        smallRate = .0125;
     }
+    UIToolbar* numberToolbar = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, 320, 50)];
+    numberToolbar.barStyle = UIBarStyleBlackTranslucent;
+    numberToolbar.items = [NSArray arrayWithObjects:
+                           [[UIBarButtonItem alloc]initWithTitle:@"Cancel" style:UIBarButtonItemStyleBordered target:self action:@selector(cancelNumberPad)],
+                           [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil],
+                           [[UIBarButtonItem alloc]initWithTitle:@"Apply" style:UIBarButtonItemStyleDone target:self action:@selector(doneWithNumberPad)],
+                           nil];
+    [numberToolbar sizeToFit];
+    addTimeTextField.inputAccessoryView = numberToolbar;
     
     UIImage *stetchLeftTrack= [[UIImage imageNamed:@"Nothing.png"]
                                stretchableImageWithLeftCapWidth:30.0 topCapHeight:0.0];
@@ -389,25 +469,12 @@ NSTimeInterval _pauseTimeInterval;
     container.hidden = true;
     lockButton.hidden = false;
     
-    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 3.2) {
-        [[NSNotificationCenter defaultCenter] addObserver:self 
-                                                 selector:@selector(keyboardDidShow:) 
-                                                     name:UIKeyboardDidShowNotification 
-                                                   object:nil];     
-    } else {
-        [[NSNotificationCenter defaultCenter] addObserver:self 
-                                                 selector:@selector(keyboardWillShow:) 
-                                                     name:UIKeyboardWillShowNotification 
-                                                   object:nil];
-    }
-    
     [timerLabel1 setNumberOfLines:0];
     [timerLabel1 setBackgroundColor:[UIColor clearColor]];
     [timerLabel1 setFont:[UIFont boldSystemFontOfSize:14]];
     [timerLabel1 setTextColor:[UIColor whiteColor]];
     
     addTimeTextField.hidden=TRUE;
-    
     
     NSDate *today = [[NSDate alloc] init];
     currentTimeDateFormatter = [[NSDateFormatter alloc] init];
@@ -485,7 +552,6 @@ NSTimeInterval _pauseTimeInterval;
         dateLabel1.hidden = true;
         doneButton.hidden = true;
         startStop.hidden = true;
-        addDoneButton.hidden = true;
         compSwitch.hidden = true;
         addTimeTextField.hidden = true;
         dateLabel1.hidden = true;
@@ -518,7 +584,6 @@ NSTimeInterval _pauseTimeInterval;
             dateLabel1.hidden = false;
             doneButton.hidden = false;
             startStop.hidden = false;
-            addDoneButton.hidden = false;
             compSwitch.hidden = false;
             dateLabel1.hidden = false;
             stopNextButton.hidden = false;
@@ -552,102 +617,6 @@ NSTimeInterval _pauseTimeInterval;
     myLabel.alpha = slideToUnlock.maximumValue - slideToUnlock.value;
 }  
 
--(IBAction)finishMassage:(id)sender {
-    [self performSegueWithIdentifier:@"massageFinished" sender:self];
-}
-
-
-
-- (void)keyboardWillShow:(NSNotification *)note {
-    {
-        [self addButtonToKeyboard];
-    }
-}
-
-- (void)keyboardDidShow:(NSNotification *)note {
-    // if clause is just an additional precaution, you could also dismiss it
-    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 3.2) {
-        [self addButtonToKeyboard];
-    }
-}
-
-- (void)addButtonToKeyboard {
-    // create custom button
-     addDoneButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    addDoneButton.frame = CGRectMake(0, 163, 106, 53);
-    addDoneButton.adjustsImageWhenHighlighted = NO;
-    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 3.0) {
-        [addDoneButton setImage:[UIImage imageNamed:@"doneup.png"] forState:UIControlStateNormal];
-        [addDoneButton setImage:[UIImage imageNamed:@"donedown.png"] forState:UIControlStateHighlighted];
-    } else {        
-        [addDoneButton setImage:[UIImage imageNamed:@"doneup.png"] forState:UIControlStateNormal];
-        [addDoneButton setImage:[UIImage imageNamed:@"donedown.png"] forState:UIControlStateHighlighted];
-    }
-    [addDoneButton addTarget:self action:@selector(doneButton:) forControlEvents:UIControlEventTouchUpInside];
-    // locate keyboard view
-    UIWindow* tempWindow = [[[UIApplication sharedApplication] windows] objectAtIndex:1];
-    UIView* keyboard;
-    for(int i=0; i<[tempWindow.subviews count]; i++) {
-        keyboard = [tempWindow.subviews objectAtIndex:i];
-        
-        // keyboard found, add the button
-        if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 3.2) {
-            if([[keyboard description] hasPrefix:@"<UIPeripheralHost"] == YES)
-                [keyboard addSubview:addDoneButton];
-        } else {
-            if([[keyboard description] hasPrefix:@"<UIKeyboard"] == YES)
-                [keyboard addSubview:addDoneButton];
-        }
-    }
-    
-    
-}
-
-- (void)doneButton:(id)sender {
-    //if (addTimeTextField.text =@"") {
-   //     [addTimeTextField setText:@"0"];
-   // }
-    
-    int theInteger; 
-    theInteger = [[addTimeTextField text] intValue];
-    
-    if ([startStop.titleLabel.text isEqualToString:@"Pause"])
-    {
-        [startStop setTitle:@"Resume" forState:UIControlStateNormal];
-        [startStop setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        
-        [secondTimer invalidate];
-        [totalMinutesTimer invalidate];
-        [totalMoneyTimer invalidate];
-        totalMoneyTimer = nil;
-        totalMinutesTimer =nil;
-        secondTimer = nil;
-        [self updateTotalMoney];
-        [self updateTotalTime];
-        [self updateTimerSecond];
-        
-        
-    } else if ([startStop.titleLabel.text isEqualToString:@"Resume"])
-    {
-        
-        [startStop setTitle:@"Pause" forState:UIControlStateNormal];
-        [startStop setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        
-        _startDate = [NSDate date];
-        _startDate = [_startDate dateByAddingTimeInterval:(-1)*(_pauseTimeInterval)+((theInteger*60)*addOrSubtract)];
-        secondTimer = [NSTimer scheduledTimerWithTimeInterval:.2 target:self selector:@selector(updateTimerSecond) userInfo:nil repeats:YES];
-        totalMinutesTimer = [NSTimer scheduledTimerWithTimeInterval:.1 target:self selector:@selector(updateTotalTime) userInfo:nil repeats:YES];
-        totalMoneyTimer = [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(updateTotalMoney) userInfo:nil repeats:YES];
-         }
-
-    
-    
-    [self.view endEditing:TRUE];
-    [addTimeTextField setText:@""];
-    addTimeTextField.hidden =TRUE;
-    [sender resignFirstResponder];
-}
-
 -(IBAction)endShift:(id)sender
 {
     [secondTimer invalidate];
@@ -670,10 +639,6 @@ NSTimeInterval _pauseTimeInterval;
                                       otherButtonTitles:@"Yes",nil];
         [alertView setTag:2];
         [alertView show];
-        
-        
-            
-
         
     } else if ([startStop.titleLabel.text isEqualToString:@"Pause"])
     {
@@ -715,12 +680,30 @@ NSTimeInterval _pauseTimeInterval;
     {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"error" message:[NSString stringWithFormat:@"error %@", [error description]] delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil, nil];
         [alert show];
-        
+
         [self dismissModalViewControllerAnimated:YES];
     }
-
-    [self dismissModalViewControllerAnimated:YES];
-
+    
+    switch (result)
+    {
+        case MFMailComposeResultCancelled:
+            [self dismissModalViewControllerAnimated:YES];
+            break;
+        case MFMailComposeResultSaved:
+            [self dismissModalViewControllerAnimated:YES];
+            break;
+        case MFMailComposeResultSent:
+            [self dismissModalViewControllerAnimated:NO];
+            [self performSegueWithIdentifier:@"EndApplicationScreen" sender:self];
+            break;
+        case MFMailComposeResultFailed:
+            [self dismissModalViewControllerAnimated:YES];
+            break;
+        default:
+            [self dismissModalViewControllerAnimated:NO];
+            [self performSegueWithIdentifier:@"EndApplicationScreen" sender:self];
+            break;
+    }
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {

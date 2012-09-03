@@ -72,9 +72,8 @@
 @property(nonatomic, retain) NSDateFormatter *dateFormatter3;
 @property(nonatomic, retain) NSDateFormatter *addTimeDateFormatter;
 @property(nonatomic, retain) NSDateFormatter *currentTimeDateFormatter;
-@property(nonatomic, retain)IBOutlet UIButton *doneButton;
+@property(weak, nonatomic)IBOutlet UIButton *doneButton;
 @property(nonatomic, retain) IBOutlet UIButton *startStop;
-@property(nonatomic, retain) IBOutlet UIButton *addDoneButton;
 @property(nonatomic, retain) NSDateFormatter *compFormatter;
 @property(nonatomic, retain)IBOutlet UISwitch *compSwitch;
 @property(nonatomic, retain)IBOutlet UISlider *slideToUnlock;
