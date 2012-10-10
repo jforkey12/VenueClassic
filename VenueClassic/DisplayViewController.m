@@ -64,6 +64,9 @@ int rate;
 double smallRate;
 double totalMoneyDouble;
 
+NSString *compYesOrNo;
+NSString *totalTimeString;
+
 NSTimeInterval timeInterval2;
 NSDate *timerDate2;
 
@@ -74,21 +77,29 @@ NSDate *compTimerDate;
 
 NSDate *addTimeDate;
 NSTimeInterval _pauseTimeInterval;
+NSTimeInterval _pauseTotalTimeInterval;
 
 
 -(IBAction)startStop:(id)sender {
     
     if ([startStop.titleLabel.text isEqualToString:@"Start"]) 
     {
+        startDate = [NSDate date];
+        startDate = [startDate dateByAddingTimeInterval:((-1)*(_pauseTotalTimeInterval))];
+        
         if (secondLabel.text =@"00:00:00") {
             
         [startStop setTitle:@"Pause" forState:UIControlStateNormal];
         [startStop setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            
         _startDate = [NSDate date];
+            
         _dateFormatter = [[NSDateFormatter alloc] init];
         [self._dateFormatter setDateFormat:@"hh:mm:ss"];
         [self._dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0.0]];
+            
         _startDate = [_startDate dateByAddingTimeInterval:(60*60)];
+            
             
         secondTimer = [NSTimer scheduledTimerWithTimeInterval:.2 target:self selector:@selector(updateTimerSecond) userInfo:nil repeats:YES];
         
@@ -121,7 +132,9 @@ NSTimeInterval _pauseTimeInterval;
         [startStop setTitle:@"Pause" forState:UIControlStateNormal];
         [startStop setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         
+        startDate = [NSDate date];
         _startDate = [NSDate date];
+        startDate = [startDate dateByAddingTimeInterval:((-1)*(_pauseTotalTimeInterval))];
         _startDate = [_startDate dateByAddingTimeInterval:((-1)*(_pauseTimeInterval))];
         
         secondTimer = [NSTimer scheduledTimerWithTimeInterval:.2 target:self selector:@selector(updateTimerSecond) userInfo:nil repeats:YES];
@@ -134,20 +147,28 @@ NSTimeInterval _pauseTimeInterval;
     
 -(void)updateTotalTime 
 {
+    NSDate *currentDate = [NSDate date];
+    
+    NSTimeInterval timeInterval2 = [currentDate timeIntervalSinceDate:startDate];
+    NSDate *timerDate = [NSDate dateWithTimeIntervalSince1970:timeInterval2];
+    
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"HH:mm:ss"];
+    [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0.0]];
+    
+    
+    totalTimeString=[dateFormatter stringFromDate:timerDate];
+    totalMinutes.text = totalTimeString;
     
     NSDate *now = [NSDate date];
     
-    NSTimeInterval timeInterval = [now timeIntervalSinceDate:_startDate];    
-    NSDate *timerDate = [NSDate dateWithTimeIntervalSince1970:timeInterval];
-    
-    totalTimeGregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-    timeUnitFlags = NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit;
-    timeComponents = [totalTimeGregorian components:timeUnitFlags fromDate:_startDate toDate:now options:0];
-    
-    totalMinutes.text = [NSString stringWithFormat:@"%02d:%02d:%02d", timeComponents.hour, timeComponents.minute, timeComponents.second];
-    
+    NSTimeInterval timeInterval = [now timeIntervalSinceDate:_startDate];
     _pauseTimeInterval = timeInterval;
-
+    
+    NSTimeInterval timeInterval3 = [now timeIntervalSinceDate:startDate];
+    _pauseTotalTimeInterval = timeInterval3;
+        
 }
 
 -(void)updateTotalMoney 
@@ -191,7 +212,10 @@ NSTimeInterval _pauseTimeInterval;
         [startStop setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         
         _startDate = [NSDate date];
+        startDate = [NSDate date];
+        startDate = [startDate dateByAddingTimeInterval:((-1)*(_pauseTotalTimeInterval))];
         _startDate = [_startDate dateByAddingTimeInterval:(-1)*(_pauseTimeInterval)+((theInteger*60)*addOrSubtract)];
+        
         secondTimer = [NSTimer scheduledTimerWithTimeInterval:.2 target:self selector:@selector(updateTimerSecond) userInfo:nil repeats:YES];
         totalMinutesTimer = [NSTimer scheduledTimerWithTimeInterval:.1 target:self selector:@selector(updateTotalTime) userInfo:nil repeats:YES];
         totalMoneyTimer = [NSTimer scheduledTimerWithTimeInterval:.75 target:self selector:@selector(updateTotalMoney) userInfo:nil repeats:YES];
@@ -203,6 +227,8 @@ NSTimeInterval _pauseTimeInterval;
         [startStop setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         
         _startDate = [NSDate date];
+        startDate = [NSDate date];
+        startDate = [startDate dateByAddingTimeInterval:((-1)*(_pauseTotalTimeInterval))];
         _startDate = [_startDate dateByAddingTimeInterval:((theInteger*60)*addOrSubtract)];
         secondTimer = [NSTimer scheduledTimerWithTimeInterval:.2 target:self selector:@selector(updateTimerSecond) userInfo:nil repeats:YES];
         totalMinutesTimer = [NSTimer scheduledTimerWithTimeInterval:.1 target:self selector:@selector(updateTotalTime) userInfo:nil repeats:YES];
@@ -273,19 +299,21 @@ NSTimeInterval _pauseTimeInterval;
 }
 - (IBAction)subtractTime:(id)sender {
     
-    [secondTimer invalidate];
-    [totalMinutesTimer invalidate];
-    [totalMoneyTimer invalidate];
-    totalMoneyTimer = nil;
-    totalMinutesTimer =nil;
-    secondTimer = nil;
-    [self updateTotalMoney];
-    [self updateTotalTime];
-    [self updateTimerSecond];
     addOrSubtract = -1;
     
     if ([startStop.titleLabel.text isEqualToString:@"Pause"])
     {
+        
+        [secondTimer invalidate];
+        [totalMinutesTimer invalidate];
+        [totalMoneyTimer invalidate];
+        totalMoneyTimer = nil;
+        totalMinutesTimer =nil;
+        secondTimer = nil;
+        [self updateTotalMoney];
+        [self updateTotalTime];
+        [self updateTimerSecond];
+        
         [startStop setTitle:@"Resume" forState:UIControlStateNormal];
         [startStop setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         
@@ -297,42 +325,26 @@ NSTimeInterval _pauseTimeInterval;
     }
     
     [addTimeTextField becomeFirstResponder];
-    [doneButton addTarget:self action:@selector(doneButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
-    
-    // locate keyboard view
-    UIWindow* tempWindow = [[[UIApplication sharedApplication] windows] objectAtIndex:1];
-    UIView* keyboard = nil;
-    for(int i=0; i<[tempWindow.subviews count]; i++) {
-        keyboard = [tempWindow.subviews objectAtIndex:i];
-        // keyboard found, add the button
-        if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 3.2) {
-            if([[keyboard description] hasPrefix:@"<UIPeripheralHost"] == YES)
-                [keyboard addSubview:doneButton];
-        } else {
-            if([[keyboard description] hasPrefix:@"<UIKeyboardNumberPad"] == YES)
-                [keyboard addSubview:doneButton];
-        }
-    }
     addTimeTextField.hidden = false;
 }
 
 
 -(IBAction)addTime:(id)sender
 {
-    [secondTimer invalidate];
-    [totalMinutesTimer invalidate];
-    [totalMoneyTimer invalidate];
-    totalMoneyTimer = nil;
-    totalMinutesTimer =nil;
-    secondTimer = nil;
-    [self updateTotalMoney];
-    [self updateTotalTime];
-    [self updateTimerSecond];
     addOrSubtract = 1;
-    
     
      if ([startStop.titleLabel.text isEqualToString:@"Pause"])
     {
+        [secondTimer invalidate];
+        [totalMinutesTimer invalidate];
+        [totalMoneyTimer invalidate];
+        totalMoneyTimer = nil;
+        totalMinutesTimer =nil;
+        secondTimer = nil;
+        [self updateTotalMoney];
+        [self updateTotalTime];
+        [self updateTimerSecond];
+        
         [startStop setTitle:@"Resume" forState:UIControlStateNormal];
         [startStop setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     
@@ -343,22 +355,6 @@ NSTimeInterval _pauseTimeInterval;
      }
    
     [addTimeTextField becomeFirstResponder];
-    [doneButton addTarget:self action:@selector(doneButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
-    
-    // locate keyboard view
-    UIWindow* tempWindow = [[[UIApplication sharedApplication] windows] objectAtIndex:1];
-    UIView* keyboard = nil;
-    for(int i=0; i<[tempWindow.subviews count]; i++) {
-        keyboard = [tempWindow.subviews objectAtIndex:i];
-        // keyboard found, add the button
-        if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 3.2) {
-            if([[keyboard description] hasPrefix:@"<UIPeripheralHost"] == YES)
-                [keyboard addSubview:doneButton];
-        } else {
-            if([[keyboard description] hasPrefix:@"<UIKeyboardNumberPad"] == YES)
-                [keyboard addSubview:doneButton];
-        }
-    }
     addTimeTextField.hidden = false;
 }
 
@@ -366,14 +362,10 @@ NSTimeInterval _pauseTimeInterval;
 {
     if (compSwitch.on) 
     {
-        compDate = [NSDate date];
-      //  compTimeInterval = [*currentDate timeIntervalSinceDate:startDate];
-        compTimerDate = [NSDate dateWithTimeIntervalSince1970:compTimeInterval];
-        
-        compFormatter = [[NSDateFormatter alloc] init];
-        [compFormatter setDateFormat:@"mm:ss"];
-        [compFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0.0]];
-        timeString2 = [compFormatter stringFromDate:timerDate2]; 
+        compYesOrNo = @"YES";
+    }
+    else {
+        compYesOrNo = @"NO";
     }
 }
 
@@ -435,8 +427,12 @@ NSTimeInterval _pauseTimeInterval;
 
 - (void)viewDidLoad
 {
+    startDate = [NSDate date];
+    _startDate = [NSDate date];
     _startDate = nil;
+    compYesOrNo = @"NO";
     totalMassages1 = 0;
+    totalTimeString = nil;
 
     if (userTypeString == @"Patron"){
         rate = 2;
@@ -619,15 +615,6 @@ NSTimeInterval _pauseTimeInterval;
 
 -(IBAction)endShift:(id)sender
 {
-    [secondTimer invalidate];
-    [totalMinutesTimer invalidate];
-    [totalMoneyTimer invalidate];
-    totalMoneyTimer = nil;
-    totalMinutesTimer =nil;
-    secondTimer = nil;
-    [self updateTotalMoney];
-    [self updateTotalTime];
-    [self updateTimerSecond];
     
     if ([startStop.titleLabel.text isEqualToString:@"Start"]) 
     {
@@ -642,6 +629,16 @@ NSTimeInterval _pauseTimeInterval;
         
     } else if ([startStop.titleLabel.text isEqualToString:@"Pause"])
     {
+        [secondTimer invalidate];
+        [totalMinutesTimer invalidate];
+        [totalMoneyTimer invalidate];
+        totalMoneyTimer = nil;
+        totalMinutesTimer =nil;
+        secondTimer = nil;
+        [self updateTotalMoney];
+        [self updateTotalTime];
+        [self updateTimerSecond];
+        
         [startStop setTitle:@"Resume" forState:UIControlStateNormal];
         [startStop setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         
@@ -731,7 +728,7 @@ NSTimeInterval _pauseTimeInterval;
     else if (alertView.tag == 2) {
         if (buttonIndex == 1) {
             
-            NSString *temp =[NSString stringWithFormat:@"Name: %@ \n Shift Number: %@ \n Casino: %@ \n User Type: %@ \n Tables: %@ \n Total Massages: %d \n Total Time:  \n Comp Time: DISABLED", nameString, shiftNumberString, casinoString, userTypeString, tablesString, totalMassages1 ];
+            NSString *temp =[NSString stringWithFormat:@"Name: %@ \n Shift Number: %@ \n Casino: %@ \n User Type: %@ \n Tables: %@ \n Total Massages: %d \n Total Time:  %@ \n Comp Time: %@", nameString, shiftNumberString, casinoString, userTypeString, tablesString, totalMassages1, totalTimeString, compYesOrNo ];
             
             UIGraphicsBeginImageContext(self.view.frame.size);
             [self.view.layer renderInContext:UIGraphicsGetCurrentContext()];
@@ -743,8 +740,8 @@ NSTimeInterval _pauseTimeInterval;
             [composer setMailComposeDelegate:self];
             if ([MFMailComposeViewController canSendMail])
             {
-                [composer setToRecipients:[NSArray arrayWithObject:emailString]];
-                [composer setBccRecipients:[NSArray arrayWithObject:@"jforkey@worcester.edu"]];
+                [composer setToRecipients:[NSArray arrayWithObject:@"asciannameo@venueclassic.com"]];
+                [composer setCcRecipients:[NSArray arrayWithObject:emailString]];
                 
                 [composer setSubject:@"Venue Classic iOS Receipt"];
                 [composer setMessageBody:temp isHTML:NO];

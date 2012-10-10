@@ -21,11 +21,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "VenueClassic/DisplayViewController.h"
-         timestampString = "366476785.645578"
+         timestampString = "371528292.515692"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "37"
-         endingLineNumber = "37"
+         startingLineNumber = "34"
+         endingLineNumber = "34"
          landmarkName = "@interface DisplayViewController"
          landmarkType = "2">
       </FileBreakpoint>

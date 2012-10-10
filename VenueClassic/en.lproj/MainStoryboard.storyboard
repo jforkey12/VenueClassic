@@ -2,14 +2,12 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11E53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="BMB-0n-hJ3">
     <dependencies>
         <deployment defaultVersion="1296" identifier="iOS"/>
-        <development defaultVersion="4200" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
     </dependencies>
     <scenes>
         <!--Information View Controller - Venue Classic-->
         <scene sceneID="fxL-FO-73j">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HoR-bl-klN" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="zbc-Tb-wiJ" customClass="InformationViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YAb-Vm-Met" customClass="UIControl">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
@@ -146,13 +144,13 @@
                         <segue destination="Dhz-q8-zZr" kind="modal" identifier="ValidationSucceeded" id="2vV-en-PHu"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HoR-bl-klN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="564" y="19"/>
         </scene>
         <!--Display View Controller - Venue Classic-->
         <scene sceneID="jA1-5g-NoH">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="V3E-FS-6DI" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="Dhz-q8-zZr" customClass="DisplayViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="i1H-0C-f6d">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
@@ -220,6 +218,9 @@
                             <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="cfR-kq-Sne">
                                 <rect key="frame" x="96" y="229" width="79" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="toggleEnabledForCompSwitch:" destination="Dhz-q8-zZr" eventType="valueChanged" id="Kaa-1c-14y"/>
+                                </connections>
                             </switch>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Comp:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="fYp-sx-3wI">
                                 <rect key="frame" x="19" y="227" width="69" height="29"/>
@@ -400,13 +401,13 @@
                         <segue destination="vnP-p2-g1g" kind="modal" identifier="EndApplicationScreen" id="wuS-CK-Ba7"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V3E-FS-6DI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="973" y="19"/>
+            <point key="canvasLocation" x="1037" y="11"/>
         </scene>
         <!--Venue Classic View Controller-->
         <scene sceneID="zpk-Ri-0Xa">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wCQ-JB-PfY" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="BMB-0n-hJ3" customClass="VenueClassicViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VLh-hL-tI3">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
@@ -438,13 +439,13 @@
                         <outlet property="view" destination="VLh-hL-tI3" id="bQw-Rr-aUz"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wCQ-JB-PfY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="144" y="19"/>
         </scene>
         <!--End App View Controller - endApp-->
         <scene sceneID="Ipp-gf-Jbc">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Hy3-Je-XMa" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="endApp" title="endApp" id="vnP-p2-g1g" customClass="EndAppViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rKG-pZ-2wS" userLabel="endApp">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
@@ -481,8 +482,9 @@
                         <outlet property="view" destination="rKG-pZ-2wS" id="Vdx-1Z-WM9"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hy3-Je-XMa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1355" y="19"/>
+            <point key="canvasLocation" x="1629" y="19"/>
         </scene>
     </scenes>
     <resources>

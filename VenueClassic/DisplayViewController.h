@@ -15,9 +15,6 @@
 
 @interface DisplayViewController : UIViewController <AVAudioPlayerDelegate, UITextFieldDelegate, MFMailComposeViewControllerDelegate, UIAlertViewDelegate> {
     
-    
-    UILabel *secondLabel;
-    
     NSTimer *secondTimer;
     NSTimer *compTimer;
     NSTimer *secondTimer2;
@@ -39,11 +36,6 @@
     UITextField *textField2;
     
     UIButton * numberPadDoneButton;
-    UIButton *stopNextButton;
-    UIButton *endShiftButton;
-    UISegmentedControl *tableType;
-    UIButton *plusButton;
-    UIButton *minusButton;
     UILabel *compLabel;
     
     UILabel *totalLabel;
@@ -57,11 +49,10 @@
     
     UISlider *slideToUnlock;  
     UIButton *lockButton;  
-    UILabel *myLabel;  
+    UILabel *myLabel; 
     UIImageView *container; 
 }
 
-@property(nonatomic, retain)IBOutlet UILabel *secondLabel;
 @property(nonatomic, retain)IBOutlet UILabel *totalMassages;
 @property(nonatomic, retain)IBOutlet UILabel *totalMinutes;
 @property(nonatomic, retain)IBOutlet NSString *timeString2;
@@ -101,6 +92,8 @@
 @property(nonatomic, retain) NSDateComponents *components;
 @property(nonatomic, retain) NSCalendar *totalTimeGregorian;
 @property(nonatomic, retain) NSDateComponents *timeComponents;
+@property(nonatomic, retain)IBOutlet UILabel *secondLabel;
+
 
 -(IBAction)UnLockIt;  
 -(IBAction)fadeLabel; 
