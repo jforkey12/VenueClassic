@@ -118,12 +118,13 @@ Shift *tempShift;
             
         _startDate = [_startDate dateByAddingTimeInterval:(60*60)];
             
+           
+        totalMoneyTimer = [NSTimer scheduledTimerWithTimeInterval:.2 target:self selector:@selector(updateTotalMoney) userInfo:nil repeats:YES];
             
         secondTimer = [NSTimer scheduledTimerWithTimeInterval:.2 target:self selector:@selector(updateTimerSecond) userInfo:nil repeats:YES];
         
         totalMinutesTimer = [NSTimer scheduledTimerWithTimeInterval:.1 target:self selector:@selector(updateTotalTime) userInfo:nil repeats:YES];
             
-        totalMoneyTimer = [NSTimer scheduledTimerWithTimeInterval:.75 target:self selector:@selector(updateTotalMoney) userInfo:nil repeats:YES];
    
         }
         else {
@@ -155,9 +156,9 @@ Shift *tempShift;
         startDate = [startDate dateByAddingTimeInterval:((-1)*(_pauseTotalTimeInterval))];
         _startDate = [_startDate dateByAddingTimeInterval:((-1)*(_pauseTimeInterval))];
         
+        totalMoneyTimer = [NSTimer scheduledTimerWithTimeInterval:.2 target:self selector:@selector(updateTotalMoney) userInfo:nil repeats:YES];
         secondTimer = [NSTimer scheduledTimerWithTimeInterval:.2 target:self selector:@selector(updateTimerSecond) userInfo:nil repeats:YES];
         totalMinutesTimer = [NSTimer scheduledTimerWithTimeInterval:.1 target:self selector:@selector(updateTotalTime) userInfo:nil repeats:YES];
-        totalMoneyTimer = [NSTimer scheduledTimerWithTimeInterval:.75 target:self selector:@selector(updateTotalMoney) userInfo:nil repeats:YES];
         
     }
 }
@@ -234,9 +235,9 @@ Shift *tempShift;
         startDate = [startDate dateByAddingTimeInterval:((-1)*(_pauseTotalTimeInterval))];
         _startDate = [_startDate dateByAddingTimeInterval:(-1)*(_pauseTimeInterval)+((theInteger*60)*addOrSubtract)];
         
+        totalMoneyTimer = [NSTimer scheduledTimerWithTimeInterval:.2 target:self selector:@selector(updateTotalMoney) userInfo:nil repeats:YES];
         secondTimer = [NSTimer scheduledTimerWithTimeInterval:.2 target:self selector:@selector(updateTimerSecond) userInfo:nil repeats:YES];
         totalMinutesTimer = [NSTimer scheduledTimerWithTimeInterval:.1 target:self selector:@selector(updateTotalTime) userInfo:nil repeats:YES];
-        totalMoneyTimer = [NSTimer scheduledTimerWithTimeInterval:.75 target:self selector:@selector(updateTotalMoney) userInfo:nil repeats:YES];
     }
     
     else if ([startStop.titleLabel.text isEqualToString:@"Start"])
@@ -250,9 +251,9 @@ Shift *tempShift;
         [tempShift setServiceStartTime:currentTime];
         startDate = [startDate dateByAddingTimeInterval:((-1)*(_pauseTotalTimeInterval))];
         _startDate = [_startDate dateByAddingTimeInterval:((theInteger*60)*addOrSubtract)];
+        totalMoneyTimer = [NSTimer scheduledTimerWithTimeInterval:.2 target:self selector:@selector(updateTotalMoney) userInfo:nil repeats:YES];
         secondTimer = [NSTimer scheduledTimerWithTimeInterval:.2 target:self selector:@selector(updateTimerSecond) userInfo:nil repeats:YES];
         totalMinutesTimer = [NSTimer scheduledTimerWithTimeInterval:.1 target:self selector:@selector(updateTotalTime) userInfo:nil repeats:YES];
-        totalMoneyTimer = [NSTimer scheduledTimerWithTimeInterval:.75 target:self selector:@selector(updateTotalMoney) userInfo:nil repeats:YES];
         
     }
     
@@ -315,6 +316,8 @@ Shift *tempShift;
         [secondLabel setTextColor:[UIColor whiteColor]];
         [startStop setTitle:@"Start" forState:UIControlStateNormal];
         [startStop setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        
+        totalMoneyDouble = totalMoneyDouble;
         
         NSString *totalMoney = [NSString stringWithFormat:@"$%.2f", totalMoneyDouble];
         
@@ -469,7 +472,7 @@ Shift *tempShift;
     totalMinutes.text = @"00:00:00";
     serviceNumber = [NSNumber numberWithInt:1];
     rate = 2;
-    smallRate = 0.025;
+    smallRate = 0.00666666;
     
     shiftArray = [[NSMutableArray alloc] initWithCapacity:1];
 
@@ -580,12 +583,12 @@ Shift *tempShift;
 	if(_user_type.selectedSegmentIndex == 0){
         userTypeString = @"Patron";
         rate = 2;
-        smallRate = .025;
+        smallRate = .00666666;
 	}
 	if(_user_type.selectedSegmentIndex == 1){
         userTypeString = @"Employee";
         rate =1;
-        smallRate = .0125;
+        smallRate = .00333333;
 	}
 }
 -(IBAction)LockIt {    
@@ -764,7 +767,7 @@ Shift *tempShift;
             
             NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
             [formatter setRoundingMode:NSNumberFormatterRoundHalfUp];
-            [formatter setMaximumFractionDigits:0];      
+            [formatter setMaximumFractionDigits:2];      
             
             NSString *serviceCost = [formatter stringFromNumber:[NSNumber numberWithDouble:totalMoneyDouble]];
           
@@ -789,7 +792,7 @@ Shift *tempShift;
             [secondLabel setTextColor:[UIColor whiteColor]];
             [secondLabel setText:@"00:00:00"];
             [moneyLabel setText:@"$0.00"];
-            totalMoneyDouble = 0.0;
+            totalMoneyDouble = 0.03;
 //            NSLog(@"tempShift: %@", shiftArray);
         }
         else {
