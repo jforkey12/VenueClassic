@@ -38,6 +38,6 @@
 }
 
 -(IBAction)reset:(id)sender{
-        
+    exit(1);
      }
 @end

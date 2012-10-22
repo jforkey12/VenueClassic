@@ -10,6 +10,7 @@
 #import "AudioToolbox/AudioToolbox.h"
 #import "AVFoundation/AVAudioPlayer.h"
 #import "InformationViewController.h"
+#import "shift.h"
 
 @implementation DisplayViewController
 @synthesize secondLabel;
@@ -52,6 +53,10 @@
 @synthesize currentTimeDateFormatter;
 @synthesize timeComponents;
 @synthesize totalTimeGregorian;
+@synthesize shift;
+@synthesize _user_type;
+
+NSMutableArray *shiftArray;
 
 bool UNLOCKED = YES;
 
@@ -63,6 +68,11 @@ int addOrSubtract;
 int rate;
 double smallRate;
 double totalMoneyDouble;
+
+NSDate *shiftStart;
+NSDate *shiftEnd;
+
+NSNumber *serviceNumber;
 
 NSString *compYesOrNo;
 NSString *totalTimeString;
@@ -78,13 +88,21 @@ NSDate *compTimerDate;
 NSDate *addTimeDate;
 NSTimeInterval _pauseTimeInterval;
 NSTimeInterval _pauseTotalTimeInterval;
+Shift *tempShift;
 
 
 -(IBAction)startStop:(id)sender {
     
     if ([startStop.titleLabel.text isEqualToString:@"Start"]) 
     {
+        tempShift = [[Shift alloc] init];
+
+        
         startDate = [NSDate date];
+        
+        NSString *currentTime = [self.currentTimeDateFormatter stringFromDate: startDate];
+        [tempShift setServiceStartTime:currentTime];
+        
         startDate = [startDate dateByAddingTimeInterval:((-1)*(_pauseTotalTimeInterval))];
         
         if (secondLabel.text =@"00:00:00") {
@@ -228,6 +246,8 @@ NSTimeInterval _pauseTotalTimeInterval;
         
         _startDate = [NSDate date];
         startDate = [NSDate date];
+        NSString *currentTime = [self.currentTimeDateFormatter stringFromDate: startDate];
+        [tempShift setServiceStartTime:currentTime];
         startDate = [startDate dateByAddingTimeInterval:((-1)*(_pauseTotalTimeInterval))];
         _startDate = [_startDate dateByAddingTimeInterval:((theInteger*60)*addOrSubtract)];
         secondTimer = [NSTimer scheduledTimerWithTimeInterval:.2 target:self selector:@selector(updateTimerSecond) userInfo:nil repeats:YES];
@@ -295,6 +315,19 @@ NSTimeInterval _pauseTotalTimeInterval;
         [secondLabel setTextColor:[UIColor whiteColor]];
         [startStop setTitle:@"Start" forState:UIControlStateNormal];
         [startStop setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        
+        NSString *totalMoney = [NSString stringWithFormat:@"$%.2f", totalMoneyDouble];
+        
+        UIAlertView *alertView = [[UIAlertView alloc]
+                                  initWithTitle: totalMoney
+                                  message: @"Do you really want to end the service?"
+                                  delegate: self
+                                  cancelButtonTitle:@"Cancel"
+                                  otherButtonTitles:@"Yes",nil];
+        
+        [alertView setTag:1];
+        [alertView show];
+        
     }
 }
 - (IBAction)subtractTime:(id)sender {
@@ -433,15 +466,13 @@ NSTimeInterval _pauseTotalTimeInterval;
     compYesOrNo = @"NO";
     totalMassages1 = 0;
     totalTimeString = nil;
+    totalMinutes.text = @"00:00:00";
+    serviceNumber = [NSNumber numberWithInt:1];
+    rate = 2;
+    smallRate = 0.025;
+    
+    shiftArray = [[NSMutableArray alloc] initWithCapacity:1];
 
-    if (userTypeString == @"Patron"){
-        rate = 2;
-        smallRate = .025;
-    }
-    else {
-        rate =1;
-        smallRate = .0125;
-    }
     UIToolbar* numberToolbar = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, 320, 50)];
     numberToolbar.barStyle = UIBarStyleBlackTranslucent;
     numberToolbar.items = [NSArray arrayWithObjects:
@@ -509,7 +540,7 @@ NSTimeInterval _pauseTotalTimeInterval;
 
 - (void) pollTime
 {
-    NSDate *today = [[NSDate alloc] init];
+    NSDate *today = [NSDate date];
     NSString *currentTime = [self.currentTimeDateFormatter stringFromDate: today];
     self.timerLabel1.text = currentTime;
 }
@@ -536,6 +567,27 @@ NSTimeInterval _pauseTotalTimeInterval;
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+-(IBAction)tables:(id)sender{
+	if(tableType.selectedSegmentIndex == 0){
+        tablesString = @"Poker";
+	}
+	if(tableType.selectedSegmentIndex == 1){
+        tablesString = @"Tables";
+	}
+}
+
+-(IBAction)user:(id)sender{
+	if(_user_type.selectedSegmentIndex == 0){
+        userTypeString = @"Patron";
+        rate = 2;
+        smallRate = .025;
+	}
+	if(_user_type.selectedSegmentIndex == 1){
+        userTypeString = @"Employee";
+        rate =1;
+        smallRate = .0125;
+	}
+}
 -(IBAction)LockIt {    
     if(UNLOCKED) {
         slideToUnlock.hidden = false;
@@ -561,7 +613,7 @@ NSTimeInterval _pauseTotalTimeInterval;
         minutesLabel.hidden = true;
         moneyLabel.hidden = true;
         alarmImage.hidden = true;
-    
+        _user_type.hidden = true;
         UNLOCKED = NO;
     }
 }
@@ -592,7 +644,7 @@ NSTimeInterval _pauseTotalTimeInterval;
             minutesLabel.hidden = false;
             moneyLabel.hidden = false;
             alarmImage.hidden = false;
-            
+            _user_type.hidden = false;
             UNLOCKED = YES;
         } 
         else {
@@ -668,6 +720,7 @@ NSTimeInterval _pauseTotalTimeInterval;
         
         
     }
+
     
 }
 
@@ -708,8 +761,25 @@ NSTimeInterval _pauseTotalTimeInterval;
         
         if (buttonIndex == 1) {
             NSLog(@"user pressed OK");
-
+            
+            NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+            [formatter setRoundingMode:NSNumberFormatterRoundHalfUp];
+            [formatter setMaximumFractionDigits:0];      
+            
+            NSString *serviceCost = [formatter stringFromNumber:[NSNumber numberWithDouble:totalMoneyDouble]];
+          
+            NSDate *today = [NSDate date];
+            NSString *currentTime = [self.currentTimeDateFormatter stringFromDate: today];
             totalMassages1 = totalMassages1 + 1;
+            [tempShift setContractRevenue:serviceCost];
+            [tempShift setComp:compYesOrNo];
+            [tempShift setCasino:casinoString];
+            [tempShift setServiceNumber:[NSNumber numberWithInt:totalMassages1]];
+            [tempShift setShiftNumber:shiftNumberString];
+            [tempShift setTables:tablesString];
+            [tempShift setServiceEndTime:currentTime];
+            [tempShift setUser:userTypeString];
+            [shiftArray addObject:tempShift]; 
             NSString *intString = [NSString stringWithFormat:@"%d Massages", totalMassages1];
             totalMassages.text = intString;
         
@@ -720,6 +790,7 @@ NSTimeInterval _pauseTotalTimeInterval;
             [secondLabel setText:@"00:00:00"];
             [moneyLabel setText:@"$0.00"];
             totalMoneyDouble = 0.0;
+//            NSLog(@"tempShift: %@", shiftArray);
         }
         else {
             NSLog(@"user pressed Cancel");
@@ -728,7 +799,9 @@ NSTimeInterval _pauseTotalTimeInterval;
     else if (alertView.tag == 2) {
         if (buttonIndex == 1) {
             
-            NSString *temp =[NSString stringWithFormat:@"Name: %@ \n Shift Number: %@ \n Casino: %@ \n User Type: %@ \n Tables: %@ \n Total Massages: %d \n Total Time:  %@ \n Comp Time: %@", nameString, shiftNumberString, casinoString, userTypeString, tablesString, totalMassages1, totalTimeString, compYesOrNo ];
+            
+            NSString *temp =[NSString stringWithFormat:@"Name: %@ \n Shift Number: %@ \n Casino: %@ \n User Type: %@ \n Tables: %@ \n Total Massages: %d \n Total Time:  %@ \n Comp Time: %@ \n \n %@", nameString, shiftNumberString, casinoString, userTypeString, tablesString, totalMassages1, totalTimeString, compYesOrNo, shiftArray];
+            
             
             UIGraphicsBeginImageContext(self.view.frame.size);
             [self.view.layer renderInContext:UIGraphicsGetCurrentContext()];
@@ -740,7 +813,7 @@ NSTimeInterval _pauseTotalTimeInterval;
             [composer setMailComposeDelegate:self];
             if ([MFMailComposeViewController canSendMail])
             {
-                [composer setToRecipients:[NSArray arrayWithObject:@"asciannameo@venueclassic.com"]];
+                [composer setToRecipients:[NSArray arrayWithObject:@"therapist@venueclassic.com"]];
                 [composer setCcRecipients:[NSArray arrayWithObject:emailString]];
                 
                 [composer setSubject:@"Venue Classic iOS Receipt"];

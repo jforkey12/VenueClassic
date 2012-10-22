@@ -13,7 +13,9 @@
 #import "InformationViewController.h"
 #import "MessageUI/MessageUI.h"
 
-@interface DisplayViewController : UIViewController <AVAudioPlayerDelegate, UITextFieldDelegate, MFMailComposeViewControllerDelegate, UIAlertViewDelegate> {
+@class Shift;
+
+@interface DisplayViewController : UIViewController <AVAudioPlayerDelegate, UITextFieldDelegate, MFMailComposeViewControllerDelegate, UIAlertViewDelegate, NSObject> {
     
     NSTimer *secondTimer;
     NSTimer *compTimer;
@@ -52,7 +54,7 @@
     UILabel *myLabel; 
     UIImageView *container; 
 }
-
+@property(nonatomic, retain) Shift *shift;
 @property(nonatomic, retain)IBOutlet UILabel *totalMassages;
 @property(nonatomic, retain)IBOutlet UILabel *totalMinutes;
 @property(nonatomic, retain)IBOutlet NSString *timeString2;
@@ -93,7 +95,7 @@
 @property(nonatomic, retain) NSCalendar *totalTimeGregorian;
 @property(nonatomic, retain) NSDateComponents *timeComponents;
 @property(nonatomic, retain)IBOutlet UILabel *secondLabel;
-
+@property(nonatomic, retain) IBOutlet UISegmentedControl *_user_type;
 
 -(IBAction)UnLockIt;  
 -(IBAction)fadeLabel; 
@@ -103,6 +105,8 @@
 -(IBAction)addTime:(id)sender;
 -(IBAction)endShift:(id)sender;
 -(IBAction)subtractTime:(id)sender;
--(IBAction)LockIt;  
+-(IBAction)LockIt; 
+-(IBAction)tables:(id)sender;
+-(IBAction)user:(id)sender;
 
 @end

@@ -13,6 +13,7 @@
 		F126BAEA15C758E900739C05 /* blankdown.png in Resources */ = {isa = PBXBuildFile; fileRef = F126BAE815C758E900739C05 /* blankdown.png */; };
 		F126BAEB15C758E900739C05 /* blankUp.png in Resources */ = {isa = PBXBuildFile; fileRef = F126BAE915C758E900739C05 /* blankUp.png */; };
 		F1441C4815C438280003DDBE /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1441C4715C438280003DDBE /* MessageUI.framework */; };
+		F1478C4C1632D14400C1AC2A /* Shift.m in Sources */ = {isa = PBXBuildFile; fileRef = F1478C4B1632D14400C1AC2A /* Shift.m */; };
 		F16ADF7815AE3AF0001E4722 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F16ADF7715AE3AF0001E4722 /* UIKit.framework */; };
 		F16ADF7A15AE3AF0001E4722 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F16ADF7915AE3AF0001E4722 /* Foundation.framework */; };
 		F16ADF7C15AE3AF0001E4722 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F16ADF7B15AE3AF0001E4722 /* CoreGraphics.framework */; };
@@ -53,6 +54,8 @@
 		F193EA3915AEE5A8001CA48E /* stopnextup.png in Resources */ = {isa = PBXBuildFile; fileRef = F193EA2C15AEE5A8001CA48E /* stopnextup.png */; };
 		F193EA4215AF48B4001CA48E /* VenueClassicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F193EA4115AF48B4001CA48E /* VenueClassicViewController.m */; };
 		F193EA4915AF4987001CA48E /* InformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F193EA4815AF4987001CA48E /* InformationViewController.m */; };
+		F1971DC41635C8BA00A0A95F /* ios_development.cer in Resources */ = {isa = PBXBuildFile; fileRef = F1971DC31635C8BA00A0A95F /* ios_development.cer */; };
+		F1971DC71635C93600A0A95F /* Venue_Classic.mobileprovision in Resources */ = {isa = PBXBuildFile; fileRef = F1971DC61635C93600A0A95F /* Venue_Classic.mobileprovision */; };
 		F1A1F34D15C41DE300FC44C8 /* doneup.png in Resources */ = {isa = PBXBuildFile; fileRef = F1A1F34C15C41DE300FC44C8 /* doneup.png */; };
 		F1A1F35015C41DEB00FC44C8 /* donedown.png in Resources */ = {isa = PBXBuildFile; fileRef = F1A1F34F15C41DEB00FC44C8 /* donedown.png */; };
 		F1C41D6815B792F800B3CB88 /* DisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1C41D6715B792F800B3CB88 /* DisplayViewController.m */; };
@@ -83,6 +86,8 @@
 		F126BAE815C758E900739C05 /* blankdown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blankdown.png; sourceTree = "<group>"; };
 		F126BAE915C758E900739C05 /* blankUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blankUp.png; sourceTree = "<group>"; };
 		F1441C4715C438280003DDBE /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		F1478C4A1632D14400C1AC2A /* Shift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shift.h; sourceTree = "<group>"; };
+		F1478C4B1632D14400C1AC2A /* Shift.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Shift.m; sourceTree = "<group>"; };
 		F16ADF7315AE3AF0001E4722 /* VenueClassic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VenueClassic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F16ADF7715AE3AF0001E4722 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F16ADF7915AE3AF0001E4722 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -131,6 +136,8 @@
 		F193EA4115AF48B4001CA48E /* VenueClassicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueClassicViewController.m; sourceTree = "<group>"; };
 		F193EA4715AF4987001CA48E /* InformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InformationViewController.h; sourceTree = "<group>"; };
 		F193EA4815AF4987001CA48E /* InformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InformationViewController.m; sourceTree = "<group>"; };
+		F1971DC31635C8BA00A0A95F /* ios_development.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = ios_development.cer; sourceTree = "<group>"; };
+		F1971DC61635C93600A0A95F /* Venue_Classic.mobileprovision */ = {isa = PBXFileReference; lastKnownFileType = file; path = Venue_Classic.mobileprovision; sourceTree = "<group>"; };
 		F1A1F34C15C41DE300FC44C8 /* doneup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = doneup.png; sourceTree = "<group>"; };
 		F1A1F34F15C41DEB00FC44C8 /* donedown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = donedown.png; sourceTree = "<group>"; };
 		F1C41D6615B792F800B3CB88 /* DisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisplayViewController.h; sourceTree = "<group>"; };
@@ -219,6 +226,8 @@
 				F1742C0915C9558B0020110F /* EndAppViewController.m */,
 				F1C41D6615B792F800B3CB88 /* DisplayViewController.h */,
 				F1C41D6715B792F800B3CB88 /* DisplayViewController.m */,
+				F1478C4A1632D14400C1AC2A /* Shift.h */,
+				F1478C4B1632D14400C1AC2A /* Shift.m */,
 				F16ADF8915AE3AF0001E4722 /* MainStoryboard.storyboard */,
 				F16ADFAC15AE3B1E001E4722 /* images */,
 				F16ADF7E15AE3AF0001E4722 /* Supporting Files */,
@@ -229,6 +238,8 @@
 		F16ADF7E15AE3AF0001E4722 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F1971DC61635C93600A0A95F /* Venue_Classic.mobileprovision */,
+				F1971DC31635C8BA00A0A95F /* ios_development.cer */,
 				F1CF678315C0670D0029E100 /* MSCTY.mp3 */,
 				F111E17B15B586CF00237E41 /* ios_development-1.cer */,
 				F16ADF7F15AE3AF0001E4722 /* VenueClassic-Info.plist */,
@@ -416,6 +427,8 @@
 			files = (
 				F16ADFA015AE3AF0001E4722 /* InfoPlist.strings in Resources */,
 				F111E17C15B586CF00237E41 /* ios_development-1.cer in Resources */,
+				F1971DC41635C8BA00A0A95F /* ios_development.cer in Resources */,
+				F1971DC71635C93600A0A95F /* Venue_Classic.mobileprovision in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,6 +462,7 @@
 				F193EA4215AF48B4001CA48E /* VenueClassicViewController.m in Sources */,
 				F193EA4915AF4987001CA48E /* InformationViewController.m in Sources */,
 				F1742C0A15C9558B0020110F /* EndAppViewController.m in Sources */,
+				F1478C4C1632D14400C1AC2A /* Shift.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

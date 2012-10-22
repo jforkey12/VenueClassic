@@ -20,12 +20,10 @@
 @synthesize _name;
 @synthesize _email;
 @synthesize _shift_number;
-@synthesize _user_type;
 @synthesize _casino;
 @synthesize _dateFormatter;
 @synthesize _dateFormatter2;
 @synthesize alertsuccess;
-@synthesize tableType;
 @synthesize tablesString;
 @synthesize userTypeString;
 @synthesize casinoString;
@@ -145,28 +143,13 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
--(IBAction)tables:(id)sender{
-	if(tableType.selectedSegmentIndex == 0){
-    tablesString = @"Poker";
-	}
-	if(tableType.selectedSegmentIndex == 1){
-    tablesString = @"Tables";
-	}
-}
+
 -(IBAction)casino:(id)sender{
 	if(_casino.selectedSegmentIndex == 0){
         casinoString = @"Foxwoods";
 	}
 	if(_casino.selectedSegmentIndex == 1){
         casinoString = @"Mohegan";
-	}
-}
--(IBAction)user:(id)sender{
-	if(_user_type.selectedSegmentIndex == 0){
-        userTypeString = @"Patron";
-	}
-	if(_user_type.selectedSegmentIndex == 1){
-        userTypeString = @"Employee";
 	}
 }
 
