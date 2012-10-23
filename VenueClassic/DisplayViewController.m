@@ -763,7 +763,7 @@ Shift *tempShift;
 	if (alertView.tag == 1) {
         
         if (buttonIndex == 1) {
-            NSLog(@"user pressed OK");
+//            NSLog(@"user pressed OK");
             
             NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
             [formatter setRoundingMode:NSNumberFormatterRoundHalfUp];
