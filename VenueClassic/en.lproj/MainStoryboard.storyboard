@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11G63b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="BMB-0n-hJ3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2840" systemVersion="11G63b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="BMB-0n-hJ3">
     <dependencies>
-        <deployment defaultVersion="1296" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
+        <deployment defaultVersion="1536" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1926"/>
     </dependencies>
     <scenes>
         <!--Information View Controller - Venue Classic-->
@@ -498,74 +498,6 @@
         <image name="nextup.png" width="211" height="50"/>
         <image name="resetup.png" width="211" height="50"/>
     </resources>
-    <classes>
-        <class className="DisplayViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DisplayViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="LockIt"/>
-                <relationship kind="action" name="UnLockIt"/>
-                <relationship kind="action" name="addTime:"/>
-                <relationship kind="action" name="endShift:"/>
-                <relationship kind="action" name="fadeLabel"/>
-                <relationship kind="action" name="startStop:"/>
-                <relationship kind="action" name="stopNext:"/>
-                <relationship kind="action" name="subtractTime:"/>
-                <relationship kind="action" name="tables:"/>
-                <relationship kind="action" name="toggleEnabledForCompSwitch:"/>
-                <relationship kind="action" name="user:"/>
-                <relationship kind="outlet" name="_user_type" candidateClass="UISegmentedControl"/>
-                <relationship kind="outlet" name="addTimeTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="alarmImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="compLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="compSwitch" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="container" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="dateLabel1" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="doneButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="endShiftButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="lockButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="minusButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="minutesLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="moneyLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="myLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="plusButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="secondLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="slideToUnlock" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="startStop" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="stopNextButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="tableType" candidateClass="UISegmentedControl"/>
-                <relationship kind="outlet" name="timeString2" candidateClass="NSString"/>
-                <relationship kind="outlet" name="timerLabel1" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="totalLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="totalMassages" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="totalMinutes" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="EndAppViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/EndAppViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="reset:"/>
-                <relationship kind="outlet" name="reset" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="InformationViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/InformationViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="CheckFieldsAlert:"/>
-                <relationship kind="action" name="backgroundTouched:"/>
-                <relationship kind="action" name="casino:"/>
-                <relationship kind="action" name="textFieldFinished:"/>
-                <relationship kind="outlet" name="_casino" candidateClass="UISegmentedControl"/>
-                <relationship kind="outlet" name="_email" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="_name" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="_shift_number" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="dateLabel1" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="timerLabel1" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="VenueClassicViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/VenueClassicViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
