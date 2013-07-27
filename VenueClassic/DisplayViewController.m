@@ -105,7 +105,7 @@ Shift *tempShift;
         
         startDate = [startDate dateByAddingTimeInterval:((-1)*(_pauseTotalTimeInterval))];
         
-        if (secondLabel.text =@"00:00:00") {
+        if ((secondLabel.text =@"00:00:00")) {
             
         [startStop setTitle:@"Pause" forState:UIControlStateNormal];
         [startStop setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -244,6 +244,8 @@ Shift *tempShift;
     {
         [startStop setTitle:@"Pause" forState:UIControlStateNormal];
         [startStop setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        
+        tempShift = [[Shift alloc] init];
         
         _startDate = [NSDate date];
         startDate = [NSDate date];
@@ -733,27 +735,36 @@ Shift *tempShift;
     {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"error" message:[NSString stringWithFormat:@"error %@", [error description]] delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil, nil];
         [alert show];
-
-        [self dismissModalViewControllerAnimated:YES];
+        [self dismissViewControllerAnimated:YES completion:^{/* done */}];
+//         DEPRECATED [self dismissModalViewControllerAnimated:YES];
     }
     
     switch (result)
     {
         case MFMailComposeResultCancelled:
-            [self dismissModalViewControllerAnimated:YES];
+            [self dismissViewControllerAnimated:YES completion:^{/* done */}];
+//         DEPRECATED [self dismissModalViewControllerAnimated:YES];
             break;
         case MFMailComposeResultSaved:
-            [self dismissModalViewControllerAnimated:YES];
+            [self dismissViewControllerAnimated:YES completion:^{/* done */}];
+//         DEPRECATED [self dismissModalViewControllerAnimated:YES];
             break;
         case MFMailComposeResultSent:
-            [self dismissModalViewControllerAnimated:NO];
+//         DEPRECATED  [self dismissModalViewControllerAnimated:NO];
+            [self dismissViewControllerAnimated:NO completion:^{/* done */}];
+
             [self performSegueWithIdentifier:@"EndApplicationScreen" sender:self];
             break;
         case MFMailComposeResultFailed:
-            [self dismissModalViewControllerAnimated:YES];
+            [self dismissViewControllerAnimated:YES completion:^{/* done */}];
+
+//         DEPRECATED  [self dismissModalViewControllerAnimated:YES];
             break;
         default:
-            [self dismissModalViewControllerAnimated:NO];
+            [self dismissViewControllerAnimated:NO completion:^{/* done */}];
+
+//         DEPRECATED  [self dismissModalViewControllerAnimated:NO];
+            
             [self performSegueWithIdentifier:@"EndApplicationScreen" sender:self];
             break;
     }
@@ -769,13 +780,21 @@ Shift *tempShift;
             [formatter setRoundingMode:NSNumberFormatterRoundHalfUp];
             [formatter setMaximumFractionDigits:2];      
             
+            NSDateFormatter *dateformatter = [[NSDateFormatter alloc] init];
+            [dateformatter setDateFormat:@"MM/dd/yy"];
+    
+            [self._dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0.0]];
+    
             NSString *serviceCost = [formatter stringFromNumber:[NSNumber numberWithDouble:totalMoneyDouble]];
           
             NSDate *today = [NSDate date];
+            NSString *date = [dateformatter stringFromDate:today];
             NSString *currentTime = [self.currentTimeDateFormatter stringFromDate: today];
             totalMassages1 = totalMassages1 + 1;
             [tempShift setContractRevenue:serviceCost];
             [tempShift setComp:compYesOrNo];
+            [tempShift setDate:date];
+            [tempShift setName:nameString];
             [tempShift setCasino:casinoString];
             [tempShift setServiceNumber:[NSNumber numberWithInt:totalMassages1]];
             [tempShift setShiftNumber:shiftNumberString];
@@ -803,8 +822,8 @@ Shift *tempShift;
         if (buttonIndex == 1) {
             
             
-            NSString *temp =[NSString stringWithFormat:@"Name: %@ \n Shift Number: %@ \n Casino: %@ \n User Type: %@ \n Tables: %@ \n Total Massages: %d \n Total Time:  %@ \n Comp Time: %@ \n \n %@", nameString, shiftNumberString, casinoString, userTypeString, tablesString, totalMassages1, totalTimeString, compYesOrNo, shiftArray];
-            
+            NSString *temp =[NSString stringWithFormat:@"%@", shiftArray];
+            NSString *subjectString = [NSString stringWithFormat:@"%@ - Venue Classic iOS Receipt", nameString];
             
             UIGraphicsBeginImageContext(self.view.frame.size);
             [self.view.layer renderInContext:UIGraphicsGetCurrentContext()];
@@ -818,11 +837,11 @@ Shift *tempShift;
             {
                 [composer setToRecipients:[NSArray arrayWithObject:@"therapist@venueclassic.com"]];
                 [composer setCcRecipients:[NSArray arrayWithObject:emailString]];
-                
-                [composer setSubject:@"Venue Classic iOS Receipt"];
+                [composer setSubject:subjectString];
                 [composer setMessageBody:temp isHTML:NO];
                 [composer setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
-                [self presentModalViewController:composer animated:YES];
+                [self presentViewController:composer animated:YES completion:^{/* done */}];
+//                [self presentModalViewController:composer animated:YES];
 
             }
         }

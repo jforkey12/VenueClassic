@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>A5CE1A9F-683F-4B35-8AE7-FA49A4F352BB</string>
+	<key>IDESourceControlProjectName</key>
+	<string>VenueClassic</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>1C72BB08-6F45-4412-84E6-DA14E5154FFF</key>
+		<string>http://github.com/thodde/VenueClassic.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>VenueClassic.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>1C72BB08-6F45-4412-84E6-DA14E5154FFF</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>http://github.com/thodde/VenueClassic.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>1C72BB08-6F45-4412-84E6-DA14E5154FFF</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>1C72BB08-6F45-4412-84E6-DA14E5154FFF</string>
+			<key>IDESourceControlWCCName</key>
+			<string>VC9</string>
+		</dict>
+	</array>
+</dict>
+</plist>

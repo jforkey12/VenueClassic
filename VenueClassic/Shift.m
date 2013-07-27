@@ -21,6 +21,7 @@
 @synthesize shiftNumber;
 @synthesize contractRevenue;
 @synthesize user;
+@synthesize name;
 
 
 -(void) setShiftNumber:(NSString *)n
@@ -71,13 +72,17 @@
     tables = t;
 }
 
--(NSString *) getTables
+-(void) setDate:(NSString *)d
 {
-    return tables;
+    date = d;
+}
+-(void) setLMT:(NSString *)lmt
+{
+    name = lmt;
 }
 -(NSString *) description
 {
-    NSString *temp = [NSString stringWithFormat:@"%@ , %@ , %@ , %@ , %@ , %@ , %@ , %@ , %@", serviceStartTime, serviceEndTime, shiftNumber, serviceNumber, contractRevenue, user, casino, tables, comp];
+    NSString *temp = [NSString stringWithFormat:@"%@ , %@ , %@ , %@ , %@ , %@ , %@ , %@ , %@ , %@ , %@", serviceNumber, date, name, shiftNumber, serviceStartTime, serviceEndTime, contractRevenue, user, casino, tables, comp];
     
     return temp;
     

@@ -11,7 +11,6 @@
 @interface Shift : NSObject
 
 {
-    NSDate *date;
     NSString *serviceStartTime;
     NSString *serviceEndTime;
     NSString *shiftNumber;
@@ -24,7 +23,7 @@
     NSString *user;
 }
 
-@property(nonatomic, retain) NSDate *date;
+@property(nonatomic, retain) NSString *date;
 @property(nonatomic, retain) NSString *serviceStartTime;
 @property(nonatomic, retain) NSString *serviceEndTime;
 @property(nonatomic, retain) NSString *shiftNumber;
@@ -35,5 +34,6 @@
 @property(nonatomic, retain) NSString *comp;
 @property(nonatomic, retain) NSString *contractRevenue;
 @property(nonatomic, retain) NSString *user;
+@property(nonatomic, retain) NSString *name;
 
 @end
